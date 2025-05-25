@@ -43,7 +43,7 @@ export default function ServicesPage() {
       title: t("hourlyHire"),
       description: t("hourlyDescription"),
       features: [t("minimumBooking"), t("kmIncluded"), t("flexibleItinerary"), t("perfectForBusiness")],
-      image: "images/services/by-the-hour.webp",
+      image: "images/services/by-the-hour.jpeg",
       serviceType: "hourly",
     },
   ]
