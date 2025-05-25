@@ -9,11 +9,11 @@ import { useLanguage } from "@/lib/contexts/language-context"
 import AnimatedText from "@/components/ui/animated-text"
 
 const partners = [
-  { name: "ING", logo: "/placeholder.svg?height=60&width=120&text=ING" },
-  { name: "Audemars Piguet", logo: "/placeholder.svg?height=60&width=120&text=AP" },
-  { name: "KNVB", logo: "/placeholder.svg?height=60&width=120&text=KNVB" },
-  { name: "Heineken", logo: "/placeholder.svg?height=60&width=120&text=Heineken" },
-  { name: "Feadship", logo: "/placeholder.svg?height=60&width=120&text=Feadship" },
+  { name: "ING", logo: "/images/logos/ing.png" },
+  { name: "KNVB", logo: "/images/logos/knvb.png" },
+  { name: "Audemars Piguet", logo: "images/logos/ap_audemars.png" },
+  { name: "Heineken", logo: "images/logos/heineken.png" },
+  { name: "Feadship", logo: "/images/logos/eadship.png" },
 ]
 
 export default function BusinessPage() {
@@ -262,7 +262,6 @@ export default function BusinessPage() {
                   alt={partner.name}
                   width={120}
                   height={60}
-                  className="opacity-60 hover:opacity-100 transition-opacity"
                 />
               </div>
             ))}

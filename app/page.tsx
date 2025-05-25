@@ -52,11 +52,11 @@ const popularRoutes = [
 ]
 
 const partners = [
-  { name: "ING", logo: "/images/ing.png" },
-  { name: "KNVB", logo: "/images/knvb.png" },
-  { name: "Audemars Piguet", logo: "images/ap_audemars.png" },
-  { name: "Heineken", logo: "images/heineken.png" },
-  { name: "Feadship", logo: "/images/feadship.png" },
+  { name: "ING", logo: "/images/logos/ing.png" },
+  { name: "KNVB", logo: "/images/logos/knvb.png" },
+  { name: "Audemars Piguet", logo: "images/logos/ap_audemars.png" },
+  { name: "Heineken", logo: "images/logos/heineken.png" },
+  { name: "Feadship", logo: "/images/logos/eadship.png" },
 ]
 
 export default function HomePage() {

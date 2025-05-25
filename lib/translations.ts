@@ -5,7 +5,6 @@ export const translations = {
     services: "Services",
     aboutUs: "About Us",
     vehicles: "Vehicles",
-    business: "Business",
     faq: "FAQ",
     contact: "Contact",
     bookNow: "Book Now",
@@ -13,7 +12,7 @@ export const translations = {
     // Hero Section
     heroTitle: "Need a Comfortable Ride?",
     heroSubtitle: "Experience luxury transportation with our premium chauffeur service",
-    bookYourRide: "Book Your Ride",
+    bookYourRide: "Book rour ride",
     viewServices: "View Services",
 
     // Popular Routes
@@ -106,7 +105,7 @@ export const translations = {
     extraKilometers: "Extra kilometers",
 
     // Booking
-    requestBooking: "Request Booking",
+    requestBooking: "Request booking",
     oneWay: "One Way",
     byTheHour: "By the Hour",
     from: "From",
@@ -123,7 +122,7 @@ export const translations = {
     yourName: "Your name",
     yourEmail: "Your email",
     yourPhone: "Your phone number",
-    requestBookingBtn: "Request Booking",
+    requestBookingBtn: "Request booking",
     viewVclass: "View V-Class",
     viewSclass: "View S-Class",
 
@@ -206,7 +205,7 @@ export const translations = {
     // Hero Section
     heroTitle: "Behoefte aan een Comfortabele Rit?",
     heroSubtitle: "Ervaar luxe vervoer met onze premium chauffeursdienst",
-    bookYourRide: "Boek Je Rit",
+    bookYourRide: "Boek je rit",
     viewServices: "Bekijk Diensten",
     viewVclass: "Bekijk V-Klasse",
     viewSclass: "Bekijk S-Klasse",
@@ -298,7 +297,7 @@ export const translations = {
     extraKilometers: "Extra kilometers",
 
     // Booking
-    requestBooking: "Boeking Aanvragen",
+    requestBooking: "Boeking aanvragen",
     oneWay: "Enkele Reis",
     byTheHour: "Per Uur",
     from: "Van",
@@ -308,14 +307,13 @@ export const translations = {
     selectTime: "Selecteer tijd",
     vehicleType: "Voertuigtype",
     selectVehicle: "Selecteer voertuig",
-    business: "Zakelijk",
     name: "Naam",
     email: "E-mail",
     phone: "Telefoon",
     yourName: "Uw naam",
     yourEmail: "Uw e-mail",
     yourPhone: "Uw telefoonnummer",
-    requestBookingBtn: "Boeking Aanvragen",
+    requestBookingBtn: "Boeking aanvragen",
 
     // Footer
     premiumService: "Premium chauffeursdienst in Amsterdam",

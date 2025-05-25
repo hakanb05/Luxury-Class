@@ -51,6 +51,8 @@ function BookingContent() {
   })
 
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState("")
 
   // Function to check if element is in viewport
   const isInViewport = (element: Element) => {
@@ -90,10 +92,37 @@ function BookingContent() {
     }
   }, [serviceTypeParam])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Booking submitted:", formData)
-    setIsSubmitted(true)
+    setIsSubmitting(true)
+    setSubmitError("")
+
+    try {
+      const response = await fetch("/api/send-booking", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (!response.ok) {
+        throw new Error("Failed to send booking request")
+      }
+
+      const result = await response.json()
+      console.log("Booking submitted successfully:", result)
+      setIsSubmitted(true)
+    } catch (error) {
+      console.error("Error submitting booking:", error)
+      setSubmitError(
+        language === "nl"
+          ? "Er is een fout opgetreden bij het verzenden van uw boeking. Probeer het opnieuw."
+          : "An error occurred while sending your booking. Please try again.",
+      )
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -130,8 +159,8 @@ function BookingContent() {
               </h1>
               <p className="text-muted-foreground">
                 {language === "nl"
-                  ? "Bedankt voor uw boekingsaanvraag. We nemen binnenkort contact met u op om uw reservering te bevestigen."
-                  : "Thank you for your booking request. We will contact you shortly to confirm your reservation."}
+                  ? "Bedankt voor uw boekingsaanvraag. We hebben uw gegevens ontvangen en nemen binnenkort contact met u op om uw reservering te bevestigen."
+                  : "Thank you for your booking request. We have received your details and will contact you shortly to confirm your reservation."}
               </p>
               <Button
                 asChild
@@ -177,6 +206,12 @@ function BookingContent() {
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {submitError && (
+                    <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
+                      <p className="text-red-600 dark:text-red-400">{submitError}</p>
+                    </div>
+                  )}
+
                   <Tabs
                     value={formData.serviceType}
                     onValueChange={(value) => handleSelectChange("serviceType", value)}
@@ -343,9 +378,38 @@ function BookingContent() {
 
                   <Button
                     type="submit"
-                    className="w-full bg-orange-500 hover:bg-orange-600 dark:bg-red-600 dark:hover:bg-red-700 dark:border dark:border-white"
+                    disabled={isSubmitting}
+                    className="w-full bg-orange-500 hover:bg-orange-600 dark:bg-red-600 dark:hover:bg-red-700 dark:border dark:border-white disabled:opacity-50"
                   >
-                    {t("requestBookingBtn")} <ArrowRight className="ml-2 h-4 w-4" />
+                    {isSubmitting ? (
+                      <>
+                        <svg
+                          className="animate-spin -ml-1 mr-3 h-4 w-4 text-white"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                          ></path>
+                        </svg>
+                        {language === "nl" ? "Verzenden..." : "Sending..."}
+                      </>
+                    ) : (
+                      <>
+                        {t("requestBookingBtn")} <ArrowRight className="ml-2 h-4 w-4" />
+                      </>
+                    )}
                   </Button>
                 </form>
               </CardContent>
