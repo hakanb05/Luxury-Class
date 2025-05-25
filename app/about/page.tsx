@@ -81,7 +81,7 @@ const partners = [
   { name: "KNVB", logo: "/images/logos/knvb.png" },
   { name: "Audemars Piguet", logo: "images/logos/ap_audemars.png" },
   { name: "Heineken", logo: "images/logos/heineken.png" },
-  { name: "Feadship", logo: "/images/logos/eadship.png" },
+  { name: "Feadship", logo: "/images/logos/feadship.png" },
 ]
 
 export default function AboutPage() {

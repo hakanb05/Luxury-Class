@@ -106,8 +106,8 @@ export const translations = {
 
     // Booking
     requestBooking: "Request booking",
-    oneWay: "One Way",
-    byTheHour: "By the Hour",
+    oneWay: "One way",
+    byTheHour: "By the hour",
     from: "From",
     to: "To",
     date: "Date",
@@ -298,8 +298,8 @@ export const translations = {
 
     // Booking
     requestBooking: "Boeking aanvragen",
-    oneWay: "Enkele Reis",
-    byTheHour: "Per Uur",
+    oneWay: "Enkele reis",
+    byTheHour: "Per uur",
     from: "Van",
     to: "Naar",
     date: "Datum",
