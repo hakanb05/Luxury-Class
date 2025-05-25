@@ -65,7 +65,7 @@ export function Header() {
                         href={item.href}
                         className={cn(
                           "transition-colors hover:text-foreground/80",
-                          pathname === item.href ? "text-orange-500 dark:text-orange-400" : "text-foreground/80",
+                          pathname === item.href ? "text-orange-500 dark:text-red-500" : "text-foreground/80",
                         )}
                       >
                         {item.name}
@@ -95,7 +95,7 @@ export function Header() {
                     href={item.href}
                     className={cn(
                       "transition-colors hover:text-foreground/80",
-                      pathname === item.href ? "text-orange-500 dark:text-orange-400" : "text-foreground/80",
+                      pathname === item.href ? "text-orange-500 dark:text-red-500" : "text-foreground/80",
                     )}
                   >
                     {item.name}
@@ -144,7 +144,7 @@ export function Header() {
                   href={item.href}
                   className={cn(
                     "flex w-full items-center rounded-md p-2 text-sm font-medium hover:underline",
-                    pathname === item.href ? "text-orange-500 dark:text-orange-400" : "text-foreground",
+                    pathname === item.href ? "text-orange-500 dark:text-red-500" : "text-foreground",
                   )}
                   onClick={() => setIsOpen(false)}
                 >
@@ -155,7 +155,7 @@ export function Header() {
                 href="/book"
                 className={cn(
                   "flex w-full items-center rounded-md p-2 text-sm font-medium hover:underline",
-                  pathname === "/book" ? "text-orange-500 dark:text-orange-400" : "text-foreground",
+                  pathname === "/book" ? "text-orange-500 dark:text-red-500" : "text-foreground",
                 )}
                 onClick={() => setIsOpen(false)}
               >

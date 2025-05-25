@@ -114,12 +114,12 @@ export default function ContactPage() {
 
               <div>
                 <h3 className="text-xl font-bold mb-4">{language === "nl" ? "Snel Contact" : "Quick Contact"}</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <Button
-                    variant="outline"
-                    className="w-full border border-gray-200 hover:bg-gray-50 dark:border-white dark:text-white dark:hover:bg-gray-800"
-                    asChild
-                  >
+                <div className="grid grid-cols-1 sm:grid-cols-1 gap-4">
+                <Button
+                      variant="outline"
+                      className="w-full border border-gray-200 hover:bg-gray-50 dark:border-white dark:text-white dark:hover:bg-gray-800"
+                      asChild
+                    >
                     <a
                       href={`https://wa.me/31629421860?text=${encodeURIComponent(
                         language === "nl"
@@ -141,10 +141,10 @@ export default function ContactPage() {
                     </a>
                   </Button>
                   <Button
-                    variant="outline"
-                    className="w-full border border-gray-200 hover:bg-gray-50 dark:border-white dark:text-white dark:hover:bg-gray-800 hidden sm:flex"
-                    asChild
-                  >
+                        variant="outline"
+                        className="w-full border border-gray-200 hover:bg-gray-50 dark:border-white dark:text-white dark:hover:bg-gray-800 flex sm:hidden"
+                        asChild
+                      >
                     <a href="tel:+31629421860">
                       <Phone className="h-5 w-5 mr-2" />
                       {language === "nl" ? "Bel Ons" : "Call Us"}
