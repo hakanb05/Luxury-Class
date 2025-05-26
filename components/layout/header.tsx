@@ -127,7 +127,7 @@ export function Header() {
             </div>
             <Button
               asChild
-              className="bg-orange-500 hover:bg-orange-600 dark:bg-red-600 dark:hover:bg-red-700 dark:border dark:border-white"
+              className=" text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600"
             >
               <Link href="/book">{t("bookNow")}</Link>
             </Button>

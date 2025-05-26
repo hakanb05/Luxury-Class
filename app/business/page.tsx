@@ -293,11 +293,11 @@ export default function BusinessPage() {
             </Button>
             <Button
               size="lg"
-              variant="outline"
-              className="text-white border-white hover:bg-white hover:text-orange-500"
+              variant="secondary"
+              className="bg-white hover:bg-gray-100 text-orange-500 dark:bg-white dark:hover:bg-gray-100 dark:text-red-600"
               asChild
             >
-              <Link href="/book">{language === "nl" ? "Boek Nu" : "Book Now"}</Link>
+              <Link href="/book">{language === "nl" ? "Boek nu" : "Book now"}</Link>
             </Button>
           </div>
         </div>

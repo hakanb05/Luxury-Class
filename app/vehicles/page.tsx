@@ -22,11 +22,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useLanguage } from "@/lib/contexts/language-context"
 
 const vClassImages = [
-  "/images/v-class.png",
-  "/images/cover.jpg",
-  "/placeholder.svg?height=400&width=600&text=V-Class+Interior",
-  "/placeholder.svg?height=400&width=600&text=V-Class+Seats",
-  "/placeholder.svg?height=400&width=600&text=V-Class+Features",
+  "/images/V-class/front.jpeg",
+  "/images/V-class/inside.jpeg",
+  "/images/V-class/inside2.jpeg",
+  "/images/V-class/side.jpeg",
+  "/images/V-class/side2.jpeg",
 ]
 
 const sClassImages = [
@@ -179,11 +179,11 @@ function VehiclesContent() {
                 <div className="space-y-4">
                   <div className="relative w-full max-w-full overflow-hidden">
                     <Image
-                      src={currentImages[currentImageIndex] || "/placeholder.svg"}
+                      src={currentImages[currentImageIndex]}
                       alt="Mercedes V-Class"
                       width={600}
-                      height={400}
-                      className="rounded-lg shadow-lg w-full h-[300px] md:h-[400px] object-cover"
+                      height={620}
+                      className="rounded-lg shadow-lg w-full h-[300px] md:h-[400px]"
                     />
                     <Button
                       variant="ghost"
@@ -216,7 +216,7 @@ function VehiclesContent() {
                       >
                         <div className="w-full h-full relative">
                           <Image
-                            src={image || "/placeholder.svg"}
+                            src={image}
                             alt={`Thumbnail ${index + 1}`}
                             width={64}
                             height={64}
@@ -233,8 +233,7 @@ function VehiclesContent() {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-orange-500 hover:bg-orange-600 dark:bg-red-600 dark:hover:bg-red-700 dark:border dark:border-white"
-                >
+                  className=" text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600">
                   <Link href="/book?vehicle=v-class">{t("bookVClass")}</Link>
                 </Button>
               </div>
@@ -456,7 +455,7 @@ function VehiclesContent() {
 
               <div className="mt-6">
                 <Button
-                  className="w-full bg-orange-500 hover:bg-orange-600 dark:bg-red-600 dark:hover:bg-red-700 dark:border dark:border-white"
+                  className="w-full text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600"
                   asChild
                 >
                   <Link href="/vehicles?tab=v-class">View V-Class Details</Link>
@@ -542,7 +541,7 @@ function VehiclesContent() {
 
               <div className="mt-6">
                 <Button
-                  className="w-full bg-orange-500 hover:bg-orange-600 dark:bg-red-600 dark:hover:bg-red-700 dark:border dark:border-white"
+                  className="w-full text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600"
                   asChild
                 >
                   <Link href="/vehicles?tab=s-class">View S-Class Details</Link>

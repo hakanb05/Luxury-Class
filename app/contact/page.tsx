@@ -84,7 +84,9 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-medium">Email</h3>
-                      <p className="text-muted-foreground">luxuryclassbenz@gmail.com</p>
+                      <a href="mailto:luxuryclassbenz@gmail.com" className="text-muted-foreground hover:underline">
+                        luxuryclassbenz@gmail.com
+                      </a>
                     </div>
                   </div>
 
@@ -131,7 +133,7 @@ export default function ContactPage() {
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5 mr-2"
+                        className="h-5 w-5 mr-2 text-green-500"
                         fill="currentColor"
                         viewBox="0 0 24 24"
                       >
@@ -226,8 +228,7 @@ export default function ContactPage() {
 
                   <Button
                     type="submit"
-                    className="w-full bg-orange-500 hover:bg-orange-600 dark:bg-red-600 dark:hover:bg-red-700 dark:border dark:border-white"
-                  >
+                    className="w-full text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600">
                     {language === "nl" ? "Verstuur Bericht" : "Send Message"}
                   </Button>
                 </form>

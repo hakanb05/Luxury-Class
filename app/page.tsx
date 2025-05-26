@@ -142,7 +142,7 @@ export default function HomePage() {
             >
               <Button
                 size="lg"
-                className="bg-orange-500 hover:bg-orange-600 dark:bg-red-600 dark:hover:bg-red-700 text-white dark:border dark:border-white"
+                className=" text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600"
                 asChild
               >
                 <Link href="/book">
@@ -202,13 +202,13 @@ export default function HomePage() {
                       <div className="flex-shrink-0">
                         {language === "nl" ? (
                           <div className="text-right">
-                            <div className="text-2xl font-bold text-orange-500">€{route.price.toFixed(2)}</div>
+                            <div className="text-2xl font-bold">€{route.price.toFixed(2)}</div>
                             <div className="text-sm text-muted-foreground">
                               (excl. btw €{Math.round(route.price * 0.91)})
                             </div>
                           </div>
                         ) : (
-                          <div className="text-2xl font-bold text-orange-500">{formatPrice(route.price)}</div>
+                          <div className="text-2xl font-bold dark:text-white text-orange-500">{formatPrice(route.price)}</div>
                         )}
                       </div>
                     </div>
@@ -220,7 +220,7 @@ export default function HomePage() {
             <div className="text-center mt-6">
               <Button
                 asChild
-                className="bg-orange-500 hover:bg-orange-600 dark:bg-red-600 dark:hover:bg-red-700 dark:border dark:border-white"
+                className=" text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600"
               >
                 <Link href="/services">{t("viewAllRoutes")}</Link>
               </Button>

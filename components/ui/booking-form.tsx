@@ -61,8 +61,39 @@ export default function BookingForm({ onClose }: BookingFormProps) {
         <form onSubmit={handleSubmit} className="space-y-6">
           <Tabs defaultValue="one-way" className="w-full">
             <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="one-way">{t("oneWay")}</TabsTrigger>
-              <TabsTrigger value="hourly">{t("byTheHour")}</TabsTrigger>
+              <TabsTrigger
+                value="one-way"
+                className="
+                  data-[state=active]:bg-gradient-to-r
+                  data-[state=active]:from-pink-500
+                  data-[state=active]:via-red-500
+                  data-[state=active]:to-orange-500
+                  data-[state=active]:text-white
+                  data-[state=inactive]:bg-gray-100
+                  dark:data-[state=inactive]:bg-zinc-800
+                  data-[state=inactive]:text-gray-600
+                  dark:data-[state=inactive]:text-gray-300
+                "
+              >
+                {t("oneWay")}
+              </TabsTrigger>
+
+              <TabsTrigger
+                value="hourly"
+                className="
+                  data-[state=active]:bg-gradient-to-r
+                  data-[state=active]:from-pink-500
+                  data-[state=active]:via-red-500
+                  data-[state=active]:to-orange-500
+                  data-[state=active]:text-white
+                  data-[state=inactive]:bg-gray-100
+                  dark:data-[state=inactive]:bg-zinc-800
+                  data-[state=inactive]:text-gray-600
+                  dark:data-[state=inactive]:text-gray-300
+                "
+              >
+                {t("byTheHour")}
+              </TabsTrigger>
             </TabsList>
 
             <TabsContent value="one-way" className="space-y-4 mt-6">
@@ -191,7 +222,7 @@ export default function BookingForm({ onClose }: BookingFormProps) {
 
             <Button
               type="submit"
-              className="w-full bg-orange-500 hover:bg-orange-600 dark:bg-red-600 dark:hover:bg-red-700 dark:border dark:border-white"
+              className="w-full text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600"
             >
               {t("requestBookingBtn")}
             </Button>

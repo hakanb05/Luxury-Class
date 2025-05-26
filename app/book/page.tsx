@@ -379,8 +379,8 @@ function BookingContent() {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-orange-500 hover:bg-orange-600 dark:bg-red-600 dark:hover:bg-red-700 dark:border dark:border-white disabled:opacity-50"
-                  >
+                    className=" w-full text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600"
+                    >
                     {isSubmitting ? (
                       <>
                         <svg
@@ -494,7 +494,7 @@ function BookingContent() {
                     ? "Als uw gewenste route hier niet vermeld staat, dien dan toch een boekingsaanvraag in en we zullen u een offerte op maat geven. Voor vragen kunt u contact met ons opnemen."
                     : "If your desired route is not listed here, please submit a booking request anyway and we'll provide you with a custom quote. For any questions, feel free to contact us."}
                 </p>
-                <Button variant="outline" className="w-full dark:border-white dark:text-white" asChild>
+                <Button variant="outline" className=" text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600" asChild>
                   <Link href="/contact">{language === "nl" ? "Neem Contact Op" : "Contact Us"}</Link>
                 </Button>
               </CardContent>

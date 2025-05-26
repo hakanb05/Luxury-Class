@@ -442,14 +442,12 @@ export default function FAQPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center fade-in-section">
             <a
               href="/contact"
-              className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-orange-500 text-white hover:bg-orange-600 dark:bg-red-600 dark:hover:bg-red-700 dark:border dark:border-white h-10 px-4 py-2"
-            >
+              className="text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600">
               {language === "nl" ? "Neem Contact Op" : "Contact Us"}
             </a>
             <a
               href="/book"
-              className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground dark:border-white dark:text-white h-10 px-4 py-2"
-            >
+              className=" text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600">
               {language === "nl" ? "Boek een Rit" : "Book a Ride"}
             </a>
           </div>

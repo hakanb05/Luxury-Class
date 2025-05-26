@@ -27,7 +27,7 @@ export default function ServicesPage() {
       title: t("cityToCityRides"),
       description: t("cityToCityDescription"),
       features: [t("freeWaitTime"), t("directRoutes"), t("fixedPricing"), t("comfortableJourney")],
-      image: "images/services/city-to-city.png",
+      image: "images/services/city-to-city.webp",
       serviceType: "one-way",
     },
     {
@@ -35,7 +35,7 @@ export default function ServicesPage() {
       title: t("airportTransfers"),
       description: t("airportDescription"),
       features: [t("oneHourWait"), t("flightMonitoring"), t("meetGreet"), t("luggageAssistance")],
-      image: "images/services/airport.webp",
+      image: "images/services/airport.jpg",
       serviceType: "one-way",
     },
     {
@@ -127,8 +127,7 @@ export default function ServicesPage() {
                 </ul>
                 <Button
                   asChild
-                  className="bg-orange-500 hover:bg-orange-600 dark:bg-red-600 dark:hover:bg-red-700 dark:border dark:border-white"
-                >
+                  className=" text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600">
                   <Link href={`/book?service=${service.serviceType}`}>
                     {t("bookThisService")} <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
@@ -136,7 +135,7 @@ export default function ServicesPage() {
               </div>
               <div className={index % 2 === 1 ? "lg:col-start-1" : ""}>
                 <Image
-                  src={service.image || "/placeholder.svg"}
+                  src={service.image}
                   alt={service.title}
                   width={500}
                   height={300}
@@ -177,7 +176,7 @@ export default function ServicesPage() {
             <div className="space-y-2">
               <div className="flex items-center gap-2 mb-2">
                 <Plane className="h-4 w-4 text-orange-500" />
-                <span className="font-medium">{t("airportServices")}</span>
+                <span className="font-medium">{t("airportTransfers")}</span>
               </div>
               <div className="pl-6 space-y-1">
                 <div className="flex justify-between text-sm">
@@ -214,7 +213,8 @@ export default function ServicesPage() {
           </div>
         </CardContent>
         <CardFooter className="mt-auto">
-          <Button className="w-full bg-orange-500 hover:bg-orange-600 dark:bg-red-600 dark:hover:bg-red-700 dark:border dark:border-white" asChild>
+          <Button className="w-full text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600">
+
             <Link href="/vehicles?tab=v-class">{t("viewVclass")}</Link>
           </Button>
         </CardFooter>
@@ -242,7 +242,7 @@ export default function ServicesPage() {
             <div className="space-y-2">
               <div className="flex items-center gap-2 mb-2">
                 <Plane className="h-4 w-4 text-orange-500" />
-                <span className="font-medium">{t("airportServices")}</span>
+                <span className="font-medium">{t("airportTransfers")}</span>
               </div>
               <div className="pl-6 space-y-1">
                 <div className="flex justify-between text-sm">
@@ -273,7 +273,7 @@ export default function ServicesPage() {
           </div>
         </CardContent>
         <CardFooter className="mt-auto">
-          <Button className="w-full bg-orange-500 hover:bg-orange-600 dark:bg-red-600 dark:hover:bg-red-700 dark:border dark:border-white" asChild>
+          <Button className="w-full text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600">
             <Link href="/vehicles?tab=s-class">{t("viewSclass")}</Link>
           </Button>
         </CardFooter>
@@ -293,9 +293,8 @@ export default function ServicesPage() {
             <Button
               asChild
               size="lg"
-              className="bg-orange-500 hover:bg-orange-600 dark:bg-red-600 dark:hover:bg-red-700 dark:border dark:border-white"
-            >
-              <Link href="/book">{t("bookNow  ")}</Link>
+              className="text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600">
+              <Link href="/book">{t("bookNow")}</Link>
             </Button>
           </div>
         </div>
