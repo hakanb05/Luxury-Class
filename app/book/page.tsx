@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState, Suspense, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
-import { ArrowRight, MapPin, Clock } from "lucide-react"
+import { ArrowRight, MapPin, Clock } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -230,7 +230,7 @@ function BookingContent() {
                             id="from"
                             value={formData.from}
                             onChange={(value) => handleAddressChange("from", value)}
-                            placeholder={t("amsterdam")}
+                            placeholder={t("adressPlaceholder")}
                             required
                           />
                         </div>
@@ -240,7 +240,7 @@ function BookingContent() {
                             id="to"
                             value={formData.to}
                             onChange={(value) => handleAddressChange("to", value)}
-                            placeholder="Rotterdam"
+                            placeholder={t("adressPlaceholder")}
                             required
                           />
                         </div>
@@ -254,7 +254,7 @@ function BookingContent() {
                           id="location"
                           value={formData.from}
                           onChange={(value) => handleAddressChange("from", value)}
-                          placeholder={t("amsterdam")}
+                          placeholder={t("adressPlaceholder")}
                           required
                         />
                       </div>
@@ -270,6 +270,7 @@ function BookingContent() {
                         type="date"
                         value={formData.date}
                         onChange={handleInputChange}
+                        min={new Date().toISOString().split("T")[0]} // Prevent selecting past dates
                         required
                       />
                     </div>
@@ -284,11 +285,39 @@ function BookingContent() {
                           <SelectValue placeholder={t("selectTime")} />
                         </SelectTrigger>
                         <SelectContent>
-                          {Array.from({ length: 24 }, (_, i) => (
-                            <SelectItem key={i} value={`${i.toString().padStart(2, "0")}:00`}>
-                              {`${i.toString().padStart(2, "0")}:00`}
-                            </SelectItem>
-                          ))}
+                          {Array.from({ length: 24 }, (_, i) => {
+                            const timeString = `${i.toString().padStart(2, "0")}:00`
+
+                            // Check if this time is in the past for today's date
+                            const isTimeInPast = () => {
+                              if (!formData.date) return false
+
+                              const today = new Date()
+                              const selectedDate = new Date(formData.date)
+
+                              // If selected date is not today, no time restrictions
+                              if (selectedDate.toDateString() !== today.toDateString()) {
+                                return false
+                              }
+
+                              // If it's today, check if the hour has already passed
+                              const currentHour = today.getHours()
+                              return i <= currentHour
+                            }
+
+                            const isPastTime = isTimeInPast()
+
+                            return (
+                              <SelectItem
+                                key={i}
+                                value={timeString}
+                                disabled={isPastTime}
+                                className={isPastTime ? "opacity-50 cursor-not-allowed text-muted-foreground" : ""}
+                              >
+                                {timeString}
+                              </SelectItem>
+                            )
+                          })}
                         </SelectContent>
                       </Select>
                     </div>

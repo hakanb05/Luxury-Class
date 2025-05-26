@@ -17,7 +17,7 @@ const partners = [
 ]
 
 export default function BusinessPage() {
-  const { t, language } = useLanguage()
+  const { t } = useLanguage()
 
   // Function to check if element is in viewport
   const isInViewport = (element: Element) => {
@@ -53,13 +53,9 @@ export default function BusinessPage() {
       <section className="py-16 bg-muted/30">
         <div className="container text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <AnimatedText text={language === "nl" ? "Zakelijke Oplossingen" : "Business Solutions"} />
+            <AnimatedText text={t("businessSolutions")} />
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto fade-in-section">
-            {language === "nl"
-              ? "Premium chauffeursdiensten op maat voor zakelijke behoeften"
-              : "Premium chauffeur services tailored to corporate needs"}
-          </p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto fade-in-section">{t("businessDescription")}</p>
         </div>
       </section>
 
@@ -68,17 +64,11 @@ export default function BusinessPage() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 fade-in-section px-4 md:px-0">
-              <h2 className="text-3xl font-bold">
-                {language === "nl" ? "Verhoog Uw Zakelijk Vervoer" : "Elevate Your Corporate Transportation"}
-              </h2>
-              <p className="text-lg text-muted-foreground dark:text-gray-300 break-words">
-                {language === "nl"
-                  ? "Luxury Class biedt premium chauffeursdiensten speciaal ontworpen voor bedrijven. Van executive luchthaven transfers tot meerdaagse zakelijke evenementen, wij zorgen ervoor dat uw team en klanten reizen in comfort, stijl en absolute professionaliteit."
-                  : "Luxury Class provides premium chauffeur services designed specifically for businesses. From executive airport transfers to multi-day corporate events, we ensure your team and clients travel in comfort, style, and absolute professionalism."}
-              </p>
+              <h2 className="text-3xl font-bold">{t("elevateTransportation")}</h2>
+              <p className="text-lg text-muted-foreground dark:text-gray-300 break-words">{t("businessText")}</p>
 
               <p className="text-lg text-muted-foreground dark:text-gray-300 break-words">
-                {language === "nl" ? "Onze zakelijke oplossingen omvatten:" : "Our business solutions include:"}
+                {t("businessSolutionsInclude")}
               </p>
 
               <ul className="space-y-4">
@@ -94,9 +84,7 @@ export default function BusinessPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="dark:text-white">
-                    {language === "nl" ? "Executive luchthaven transfers" : "Executive airport transfers"}
-                  </span>
+                  <span className="dark:text-white">{t("executiveTransfers")}</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <div className="w-6 h-6 rounded-full bg-orange-100 dark:bg-orange-900/20 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -110,9 +98,7 @@ export default function BusinessPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="dark:text-white">
-                    {language === "nl" ? "Vervoer voor zakelijke evenementen" : "Corporate event transportation"}
-                  </span>
+                  <span className="dark:text-white">{t("corporateEvents")}</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <div className="w-6 h-6 rounded-full bg-orange-100 dark:bg-orange-900/20 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -126,9 +112,7 @@ export default function BusinessPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="dark:text-white">
-                    {language === "nl" ? "Roadshows en multi-city tours" : "Roadshows and multi-city tours"}
-                  </span>
+                  <span className="dark:text-white">{t("roadshows")}</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <div className="w-6 h-6 rounded-full bg-orange-100 dark:bg-orange-900/20 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -142,9 +126,7 @@ export default function BusinessPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="dark:text-white">
-                    {language === "nl" ? "Klantentertainment en VIP-diensten" : "Client entertainment and VIP services"}
-                  </span>
+                  <span className="dark:text-white">{t("clientEntertainment")}</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <div className="w-6 h-6 rounded-full bg-orange-100 dark:bg-orange-900/20 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -158,20 +140,18 @@ export default function BusinessPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="dark:text-white">
-                    {language === "nl" ? "Aangepaste vervoersoplossingen" : "Customized transportation solutions"}
-                  </span>
+                  <span className="dark:text-white">{t("customizedSolutions")}</span>
                 </li>
               </ul>
             </div>
 
             <div className="fade-in-section">
               <Image
-                src="/images/business-image.png"
-                alt={language === "nl" ? "Executive Chauffeursdienst" : "Executive Chauffeur Service"}
+                src="/placeholder.svg?height=400&width=600&text=Business+Transportation"
+                alt={t("businessSolutions")}
                 width={600}
                 height={400}
-                className="rounded-lg shadow-lg"
+                className="rounded-lg shadow-lg w-full h-[400px] object-cover"
               />
             </div>
           </div>
@@ -182,9 +162,7 @@ export default function BusinessPage() {
       <section className="py-16 bg-muted/30">
         <div className="container">
           <div className="text-center mb-12 fade-in-section">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              {language === "nl" ? "Voordelen voor Zakelijke Klanten" : "Benefits for Business Clients"}
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("benefitsForBusiness")}</h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -192,54 +170,32 @@ export default function BusinessPage() {
               <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full flex items-center justify-center mb-4">
                 <Briefcase className="h-6 w-6 text-orange-500" />
               </div>
-              <h3 className="text-xl font-bold mb-2">
-                {language === "nl" ? "Zakelijke Accounts" : "Corporate Accounts"}
-              </h3>
-              <p className="text-muted-foreground dark:text-gray-300 break-words">
-                {language === "nl"
-                  ? "Vereenvoudigde facturering met maandelijkse facturatie en gedetailleerde rittenrapporten voor eenvoudig kostenbeheer."
-                  : "Simplified billing with monthly invoicing and detailed trip reports for easy expense management."}
-              </p>
+              <h3 className="text-xl font-bold mb-2">{t("corporateAccounts")}</h3>
+              <p className="text-muted-foreground dark:text-gray-300 break-words">{t("corporateAccountsText")}</p>
             </div>
 
             <div className="bg-background rounded-lg p-6 border fade-in-section">
               <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full flex items-center justify-center mb-4">
                 <Clock className="h-6 w-6 text-orange-500" />
               </div>
-              <h3 className="text-xl font-bold mb-2">
-                {language === "nl" ? "Prioriteit Boekingen" : "Priority Booking"}
-              </h3>
-              <p className="text-muted-foreground dark:text-gray-300 break-words">
-                {language === "nl"
-                  ? "Gegarandeerde beschikbaarheid met prioriteitsplanning voor zakelijke klanten, zelfs tijdens piekperiodes."
-                  : "Guaranteed availability with priority scheduling for corporate clients, even during peak times."}
-              </p>
+              <h3 className="text-xl font-bold mb-2">{t("priorityBooking")}</h3>
+              <p className="text-muted-foreground dark:text-gray-300 break-words">{t("priorityBookingText")}</p>
             </div>
 
             <div className="bg-background rounded-lg p-6 border fade-in-section">
               <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full flex items-center justify-center mb-4">
                 <Users className="h-6 w-6 text-orange-500" />
               </div>
-              <h3 className="text-xl font-bold mb-2">
-                {language === "nl" ? "Toegewijde Chauffeurs" : "Dedicated Chauffeurs"}
-              </h3>
-              <p className="text-muted-foreground dark:text-gray-300 break-words">
-                {language === "nl"
-                  ? "Consistente service met dezelfde professionele chauffeurs die uw voorkeuren begrijpen."
-                  : "Consistent service with the same professional chauffeurs who understand your preferences."}
-              </p>
+              <h3 className="text-xl font-bold mb-2">{t("dedicatedChauffeurs")}</h3>
+              <p className="text-muted-foreground dark:text-gray-300 break-words">{t("dedicatedChauffeursText")}</p>
             </div>
 
             <div className="bg-background rounded-lg p-6 border fade-in-section">
               <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full flex items-center justify-center mb-4">
                 <Receipt className="h-6 w-6 text-orange-500" />
               </div>
-              <h3 className="text-xl font-bold mb-2">{language === "nl" ? "Fiscaal Aftrekbaar" : "Tax Deductible"}</h3>
-              <p className="text-muted-foreground dark:text-gray-300 break-words">
-                {language === "nl"
-                  ? "Alle zakelijke vervoersdiensten zijn volledig fiscaal aftrekbaar met de juiste documentatie."
-                  : "All business transportation services are fully tax deductible with proper documentation provided."}
-              </p>
+              <h3 className="text-xl font-bold mb-2">{t("taxDeductible")}</h3>
+              <p className="text-muted-foreground dark:text-gray-300 break-words">{t("taxDeductibleText")}</p>
             </div>
           </div>
         </div>
@@ -249,9 +205,7 @@ export default function BusinessPage() {
       <section className="py-16">
         <div className="container">
           <div className="text-center mb-12 fade-in-section">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              {language === "nl" ? "Vertrouwd Door Toonaangevende Bedrijven" : "Trusted By Leading Companies"}
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("trustedByCompanies")}</h2>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
@@ -272,16 +226,8 @@ export default function BusinessPage() {
       {/* CTA Section */}
       <section className="py-16 bg-orange-500 text-white">
         <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 fade-in-section">
-            {language === "nl"
-              ? "Klaar om Uw Zakelijke Reizen te Verbeteren?"
-              : "Ready to Elevate Your Corporate Travel?"}
-          </h2>
-          <p className="text-xl mb-8 text-white/90 fade-in-section">
-            {language === "nl"
-              ? "Neem vandaag nog contact met ons op om uw zakelijke vervoersbehoeften te bespreken en een oplossing op maat te creëren."
-              : "Contact us today to discuss your business transportation needs and create a customized solution."}
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 fade-in-section">{t("readyToElevate")}</h2>
+          <p className="text-xl mb-8 text-white/90 fade-in-section">{t("contactToday")}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center fade-in-section">
             <Button
               size="lg"
@@ -289,7 +235,7 @@ export default function BusinessPage() {
               className="bg-white hover:bg-gray-100 text-orange-500 dark:bg-white dark:hover:bg-gray-100 dark:text-red-600"
               asChild
             >
-              <Link href="/contact">{language === "nl" ? "Neem Contact Op" : "Contact Us"}</Link>
+              <Link href="/contact">{t("contactUs")}</Link>
             </Button>
             <Button
               size="lg"
@@ -297,7 +243,7 @@ export default function BusinessPage() {
               className="bg-white hover:bg-gray-100 text-orange-500 dark:bg-white dark:hover:bg-gray-100 dark:text-red-600"
               asChild
             >
-              <Link href="/book">{language === "nl" ? "Boek nu" : "Book now"}</Link>
+              <Link href="/book">{t("bookNow")}</Link>
             </Button>
           </div>
         </div>

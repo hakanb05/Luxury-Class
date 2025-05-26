@@ -265,7 +265,7 @@ export default function HomePage() {
               <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900/20 rounded-full flex items-center justify-center mx-auto">
                 <Users className="h-8 w-8 text-orange-500" />
               </div>
-              <h3 className="text-xl font-semibold">{t("satisfiedCustomers")}</h3>
+              <h3 className="text-xl font-semibold">{t("satisfiedCustomers1000")}</h3>
               <p className="text-muted-foreground">{t("satisfiedDescription")}</p>
             </div>
           </div>

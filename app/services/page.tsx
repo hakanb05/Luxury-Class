@@ -170,7 +170,7 @@ export default function ServicesPage() {
                 <Clock className="h-4 w-4 text-orange-500" />
                 <span className="font-medium">{t("hourlyRate")}</span>
               </div>
-              <span className="text-2xl font-bold text-foreground dark:text-white">€85/hour</span>
+              <span className="text-2xl font-bold text-foreground dark:text-white">€85{t("hour")}</span>
             </div>
 
             <div className="space-y-2">
@@ -236,7 +236,7 @@ export default function ServicesPage() {
                 <Clock className="h-4 w-4 text-orange-500" />
                 <span className="font-medium">{t("hourlyRate")}</span>
               </div>
-              <span className="text-2xl font-bold text-foreground dark:text-white">€95/hour</span>
+              <span className="text-2xl font-bold text-foreground dark:text-white">€95{t("hour")}</span>
             </div>
 
             <div className="space-y-2">

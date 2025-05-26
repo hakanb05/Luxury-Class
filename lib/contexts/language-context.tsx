@@ -18,7 +18,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem("language") as Language
-    if (savedLanguage && (savedLanguage === "en" || savedLanguage === "nl")) {
+    if (savedLanguage && ["nl", "en", "de", "fr", "es"].includes(savedLanguage)) {
       setLanguage(savedLanguage)
     }
   }, [])
@@ -29,7 +29,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   }
 
   const t = (key: TranslationKey): string => {
-    return translations[language][key] || translations.en[key] || key
+    return translations[key]?.[language] || translations[key]?.["en"] || key
   }
 
   const formatPrice = (price: number): string => {

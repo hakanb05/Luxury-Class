@@ -242,61 +242,57 @@ function VehiclesContent() {
             <TabsContent value="s-class">
               <div className="grid lg:grid-cols-2 gap-8 items-start">
                 <div className="space-y-6">
-                  <h2 className="text-3xl font-bold">Mercedes-Benz S-Class</h2>
-                  <p className="text-lg text-muted-foreground">
-                    The epitome of luxury and sophistication. Our S-Class vehicles offer the ultimate executive
-                    experience with unparalleled comfort, cutting-edge technology, and refined elegance for discerning
-                    passengers.
-                  </p>
+                  <h2 className="text-3xl font-bold">{t("sClass")}</h2>
+                  <p className="text-lg text-muted-foreground">{t("sClassDescription")}</p>
 
                   <div>
                     <h3 className="text-xl font-semibold mb-4">{t("specifications")}</h3>
                     <ul className="space-y-2 text-muted-foreground mb-6">
-                      <li>• Capacity: Up to 3 passengers</li>
-                      <li>• Luggage: Space for 2-3 suitcases</li>
-                      <li>• Amenities: WiFi, water, USB-C chargers, premium sound system</li>
-                      <li>• Perfect for: Executive travel, airport transfers, business meetings</li>
+                      <li>• {t("sClassCapacity")}</li>
+                      <li>• {t("sClassLuggage")}</li>
+                      <li>• {t("sClassAmenities")}</li>
+                      <li>• {t("sClassPerfectFor")}</li>
                     </ul>
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-semibold mb-4">{t("keyFeatures")}</h3>
+                  <h3 className="text-xl font-semibold mb-4">{t("keyFeatures")}</h3>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="flex items-center space-x-3">
                         <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900/20 rounded-full flex items-center justify-center">
                           <Users className="h-5 w-5 text-orange-500" />
                         </div>
-                        <span>Up to 3 passengers</span>
+                        <span>{t("upTo3Passengers")}</span>
                       </div>
                       <div className="flex items-center space-x-3">
                         <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900/20 rounded-full flex items-center justify-center">
                           <Volume2 className="h-5 w-5 text-orange-500" />
                         </div>
-                        <span>Premium sound system</span>
+                        <span>{t("premiumSound")}</span>
                       </div>
                       <div className="flex items-center space-x-3">
                         <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900/20 rounded-full flex items-center justify-center">
                           <Thermometer className="h-5 w-5 text-orange-500" />
                         </div>
-                        <span>Multi-zone climate control</span>
+                        <span>{t("multiZoneClimate")}</span>
                       </div>
                       <div className="flex items-center space-x-3">
                         <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900/20 rounded-full flex items-center justify-center">
                           <Users className="h-5 w-5 text-orange-500" />
                         </div>
-                        <span>Executive seating</span>
+                        <span>{t("executiveSeating")}</span>
                       </div>
                       <div className="flex items-center space-x-3">
                         <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900/20 rounded-full flex items-center justify-center">
                           <Shield className="h-5 w-5 text-orange-500" />
                         </div>
-                        <span>Noise cancellation</span>
+                        <span>{t("noiseCancellation")}</span>
                       </div>
                       <div className="flex items-center space-x-3">
                         <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900/20 rounded-full flex items-center justify-center">
                           <Shield className="h-5 w-5 text-orange-500" />
                         </div>
-                        <span>Privacy glass</span>
+                        <span>{t("privacyGlass")}</span>
                       </div>
                     </div>
                   </div>
@@ -551,9 +547,9 @@ function VehiclesContent() {
           </div>
 
           <div className="text-center mt-8 text-sm text-muted-foreground fade-in-section">
-            <p>* Hourly rates include 25km per hour.</p>
+            <p>{t("hourlyRateExplanation")}</p>
             <p className="mt-2">
-              All prices are for services within Amsterdam. For trips outside Amsterdam, please request a custom quote.
+              {t("regionExplanation")}
             </p>
           </div>
         </div>

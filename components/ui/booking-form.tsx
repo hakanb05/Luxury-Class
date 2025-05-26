@@ -23,15 +23,57 @@ export default function BookingForm({ onClose }: BookingFormProps) {
   const [formSubmitted, setFormSubmitted] = useState(false)
   const [selectedTime, setSelectedTime] = useState("")
   const [selectedTimeHourly, setSelectedTimeHourly] = useState("")
+  const [selectedDate, setSelectedDate] = useState("")
+  const [selectedDateHourly, setSelectedDateHourly] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState("")
 
   // Form state for addresses
   const [fromAddress, setFromAddress] = useState("")
   const [toAddress, setToAddress] = useState("")
   const [fromAddressHourly, setFromAddressHourly] = useState("")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setFormSubmitted(true)
+    setIsSubmitting(true)
+    setSubmitError("")
+
+    try {
+      // Collect form data
+      const formData = new FormData(e.target as HTMLFormElement)
+      const bookingData = {
+        serviceType: formData.get("serviceType") || "one-way",
+        from: fromAddress || fromAddressHourly,
+        to: toAddress,
+        date: selectedDate || selectedDateHourly,
+        time: selectedTime || selectedTimeHourly,
+        vehicle: formData.get("vehicle"),
+        isBusiness: isBusiness,
+        companyName: formData.get("companyName") || "",
+        name: formData.get("name"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+      }
+
+      const response = await fetch("/api/send-booking", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bookingData),
+      })
+
+      if (!response.ok) {
+        throw new Error("Failed to send booking request")
+      }
+
+      setFormSubmitted(true)
+    } catch (error) {
+      console.error("Error submitting booking:", error)
+      setSubmitError("Er is een fout opgetreden bij het verzenden. Probeer het opnieuw.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (formSubmitted) {
@@ -59,7 +101,12 @@ export default function BookingForm({ onClose }: BookingFormProps) {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          <Tabs defaultValue="one-way" className="w-full">
+          {submitError && (
+            <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-4">
+              <p className="text-red-600 dark:text-red-400">{submitError}</p>
+            </div>
+          )}
+          <Tabs defaultValue="one-way" className="w-full" name="serviceType">
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger
                 value="one-way"
@@ -104,7 +151,7 @@ export default function BookingForm({ onClose }: BookingFormProps) {
                     id="from"
                     value={fromAddress}
                     onChange={setFromAddress}
-                    placeholder="Amsterdam"
+                    placeholder={t("adressPlaceholder")}
                     required
                   />
                 </div>
@@ -114,18 +161,25 @@ export default function BookingForm({ onClose }: BookingFormProps) {
                     id="to"
                     value={toAddress}
                     onChange={setToAddress}
-                    placeholder="Rotterdam"
+                    placeholder={t("adressPlaceholder")}
                     required
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="date">{t("date")}</Label>
-                    <Input id="date" type="date" required />
+                    <Input
+                      id="date"
+                      type="date"
+                      value={selectedDate}
+                      onChange={(e) => setSelectedDate(e.target.value)}
+                      min={new Date().toISOString().split("T")[0]} // Voorkomt selectie van verleden datums
+                      required
+                    />
                   </div>
                   <div>
                     <Label htmlFor="time">{t("time")}</Label>
-                    <TimePicker value={selectedTime} onChange={setSelectedTime} />
+                    <TimePicker value={selectedTime} onChange={setSelectedTime} selectedDate={selectedDate} />
                   </div>
                 </div>
               </div>
@@ -139,18 +193,29 @@ export default function BookingForm({ onClose }: BookingFormProps) {
                     id="from-hourly"
                     value={fromAddressHourly}
                     onChange={setFromAddressHourly}
-                    placeholder="Amsterdam"
+                    placeholder="Address, airport, hotel, ..."
                     required
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="date-hourly">{t("date")}</Label>
-                    <Input id="date-hourly" type="date" required />
+                    <Input
+                      id="date-hourly"
+                      type="date"
+                      value={selectedDateHourly}
+                      onChange={(e) => setSelectedDateHourly(e.target.value)}
+                      min={new Date().toISOString().split("T")[0]} // Voorkomt selectie van verleden datums
+                      required
+                    />
                   </div>
                   <div>
                     <Label htmlFor="time-hourly">{t("time")}</Label>
-                    <TimePicker value={selectedTimeHourly} onChange={setSelectedTimeHourly} />
+                    <TimePicker
+                      value={selectedTimeHourly}
+                      onChange={setSelectedTimeHourly}
+                      selectedDate={selectedDateHourly}
+                    />
                   </div>
                 </div>
                 <div>
@@ -175,7 +240,7 @@ export default function BookingForm({ onClose }: BookingFormProps) {
           <div className="space-y-4">
             <div>
               <Label htmlFor="vehicle">{t("vehicleType")}</Label>
-              <Select>
+              <Select name="vehicle">
                 <SelectTrigger>
                   <SelectValue placeholder={t("selectVehicle")} />
                 </SelectTrigger>
@@ -200,31 +265,58 @@ export default function BookingForm({ onClose }: BookingFormProps) {
             {isBusiness && (
               <div className="animate-fade-up">
                 <Label htmlFor="company">Company Name</Label>
-                <Input id="company" placeholder="Your company name" />
+                <Input id="company" placeholder="Your company name" name="companyName" />
               </div>
             )}
 
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="name">{t("name")}</Label>
-                <Input id="name" placeholder={t("yourName")} required />
+                <Input id="name" placeholder={t("yourName")} required name="name" />
               </div>
               <div>
                 <Label htmlFor="email">{t("email")}</Label>
-                <Input id="email" type="email" placeholder={t("yourEmail")} required />
+                <Input id="email" type="email" placeholder={t("yourEmail")} required name="email" />
               </div>
             </div>
 
             <div>
               <Label htmlFor="phone">{t("phone")}</Label>
-              <Input id="phone" placeholder={t("yourPhone")} required />
+              <Input id="phone" placeholder={t("yourPhone")} required name="phone" />
             </div>
 
             <Button
               type="submit"
-              className="w-full text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600"
+              disabled={isSubmitting}
+              className="w-full text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600 disabled:opacity-50"
             >
-              {t("requestBookingBtn")}
+              {isSubmitting ? (
+                <>
+                  <svg
+                    className="animate-spin -ml-1 mr-3 h-4 w-4 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
+                  </svg>
+                  Verzenden...
+                </>
+              ) : (
+                t("requestBookingBtn")
+              )}
             </Button>
           </div>
         </form>
