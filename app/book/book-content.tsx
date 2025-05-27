@@ -16,8 +16,9 @@ const popularRoutes = [
 ]
 
 const internationalRoutes = [
-  { from: "Amsterdam", to: "Brussels", vClass: 285, sClass: 315 },
-  { from: "Amsterdam", to: "Antwerp", vClass: 245, sClass: 270 },
+  { from: "Amsterdam", to: "Brussels", vClass: 285, sClass: 630 },
+  { from: "Amsterdam", to: "Antwerp", vClass: 245, sClass: 480 },
+  { from: "Amsterdam", to: "Dusseldorf", vClass: 320, sClass: 666 },
 ]
 
 function BookingContent() {

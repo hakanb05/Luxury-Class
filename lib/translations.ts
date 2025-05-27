@@ -69,7 +69,7 @@ export const translations = {
     nl: "Boek je rit",
     en: "Book your ride",
     de: "Buchen Sie Ihre Fahrt",
-    fr: "Réservez votre trajet",  
+    fr: "Réservez votre trajet",
     es: "Reserve su viaje",
   },
   viewServices: {
@@ -886,6 +886,20 @@ export const translations = {
     de: "Amsterdam, Niederlande",
     fr: "Amsterdam, Pays-Bas",
     es: "Ámsterdam, Países Bajos",
+  },
+  otherRoute: {
+    nl: "Andere Route?",
+    en: "Other Route?",
+    de: "Andere Route?",
+    fr: "Autre itinéraire?",
+    es: "¿Otra ruta?",
+  },
+  otherRouteDescription: {
+    nl: "Als uw gewenste route hier niet vermeld staat, dien dan toch een boekingsaanvraag in en we zullen u een offerte op maat geven. Voor vragen kunt u contact met ons opnemen.",
+    en: "If your desired route is not listed here, please submit a booking request anyway and we'll provide you with a custom quote. For any questions, feel free to contact us.",
+    de: "Wenn Ihre gewünschte Route hier nicht aufgeführt ist, reichen Sie trotzdem eine Buchungsanfrage ein und wir erstellen Ihnen ein individuelles Angebot. Bei Fragen können Sie uns gerne kontaktieren.",
+    fr: "Si votre itinéraire souhaité n'est pas répertorié ici, veuillez soumettre une demande de réservation de toute façon et nous vous fournirons un devis personnalisé. Pour toute question, n'hésitez pas à nous contacter.",
+    es: "Si su ruta deseada no está listada aquí, envíe una solicitud de reserva de todos modos y le proporcionaremos una cotización personalizada. Para cualquier pregunta, no dude en contactarnos.",
   },
 
   // Language
