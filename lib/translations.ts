@@ -15,10 +15,10 @@ export const translations = {
     es: "Servicios",
   },
   aboutUs: {
-    nl: "Over Ons",
-    en: "About Us",
-    de: "Über Uns",
-    fr: "À Propos",
+    nl: "Over ons",
+    en: "About us",
+    de: "Über uns",
+    fr: "À propos",
     es: "Acerca de",
   },
   vehicles: {
@@ -52,11 +52,11 @@ export const translations = {
 
   // Hero Section
   heroTitle: {
-    nl: "Behoefte aan een Comfortabele Rit?",
-    en: "Need a Comfortable Ride?",
-    de: "Brauchen Sie eine Komfortable Fahrt?",
-    fr: "Besoin d'un Trajet Confortable?",
-    es: "¿Necesita un Viaje Cómodo?",
+    nl: "Behoefte aan een comfortabele rit?",
+    en: "Need a comfortable ride?",
+    de: "Brauchen Sie eine komfortable Fahrt?",
+    fr: "Besoin d'un rrajet confortable?",
+    es: "¿Necesita un viaje cómodo?",
   },
   heroSubtitle: {
     nl: "Ervaar luxe vervoer met onze premium chauffeursdienst",
@@ -73,8 +73,8 @@ export const translations = {
     es: "Reserve su viaje",
   },
   viewServices: {
-    nl: "Bekijk Diensten",
-    en: "View Services",
+    nl: "Bekijk diensten",
+    en: "View services",
     de: "Dienste Anzeigen",
     fr: "Voir les Services",
     es: "Ver Servicios",
@@ -82,18 +82,18 @@ export const translations = {
 
   // Popular Routes
   popularRoutes: {
-    nl: "Populaire Routes",
-    en: "Popular Routes",
-    de: "Beliebte Routen",
-    fr: "Routes Populaires",
-    es: "Rutas Populares",
+    nl: "Populaire routes",
+    en: "Popular routes",
+    de: "Beliebte routen",
+    fr: "Routes populaires",
+    es: "Rutas populares",
   },
   viewAllRoutes: {
-    nl: "Bekijk Alle Routes",
-    en: "View All Routes",
-    de: "Alle Routen Anzeigen",
-    fr: "Voir Toutes les Routes",
-    es: "Ver Todas las Rutas",
+    nl: "Bekijk alle routes",
+    en: "View all routes",
+    de: "Alle routen anzeigen",
+    fr: "Voir toutes les routes",
+    es: "Ver todas las rutas",
   },
 
   // Pricing service
@@ -172,8 +172,8 @@ export const translations = {
 
   // Trusted Partners
   trustedPartners: {
-    nl: "Vertrouwd door Toonaangevende Bedrijven",
-    en: "Trusted by Leading Companies",
+    nl: "Vertrouwd door toonaangevende bedrijven",
+    en: "Trusted by leading companies",
     de: "Vertraut von führenden Unternehmen",
     fr: "Approuvé par les entreprises leaders",
     es: "Confiado por empresas líderes",
@@ -181,9 +181,9 @@ export const translations = {
 
   // CTA Section
   readyForPremium: {
-    nl: "Klaar voor een Premium Ervaring?",
-    en: "Ready for a Premium Experience?",
-    de: "Bereit für ein Premium-Erlebnis?",
+    nl: "Klaar voor een premiumervaring?",
+    en: "Ready for a premium experience?",
+    de: "Bereit für ein Premiumerlebnis?",
     fr: "Prêt pour une expérience premium?",
     es: "¿Listo para una experiencia premium?",
   },
@@ -197,9 +197,9 @@ export const translations = {
 
   // Services
   ourServices: {
-    nl: "Onze Premium Diensten",
-    en: "Our Premium Services",
-    de: "Unsere Premium-Dienste",
+    nl: "Onze premiumdiensten",
+    en: "Our premium Services",
+    de: "Unsere premiumdienste",
     fr: "Nos services premium",
     es: "Nuestros servicios premium",
   },
@@ -357,9 +357,9 @@ export const translations = {
 
   // Vehicles
   ourFleet: {
-    nl: "Ons Premium Wagenpark",
-    en: "Our Premium Fleet",
-    de: "Unsere Premium-Flotte",
+    nl: "Ons premiumwagenpark",
+    en: "Our premium fleet",
+    de: "Unsere Premiumflotte",
     fr: "Notre flotte premium",
     es: "Nuestra flota premium",
   },
@@ -419,7 +419,7 @@ export const translations = {
   },
 
   keyFeatures: {
-    nl: "Belangrijkste Kenmerken",
+    nl: "Belangrijkste kenmerken",
     en: "Key Features",
     de: "Hauptmerkmale",
     fr: "Caractéristiques principales",
@@ -774,19 +774,20 @@ export const translations = {
 
   // Button texts
   viewVClassDetails: {
-    nl: "Bekijk V-Klasse Details",
-    en: "View V-Class Details",
-    de: "V-Klasse Details anzeigen",
+    nl: "Bekijk V-Klasse-details",
+    en: "View V-Class details",
+    de: "V-Klasse-Details anzeigen",
     fr: "Voir les détails de la Classe V",
     es: "Ver detalles de la Clase V",
   },
   viewSClassDetails: {
-    nl: "Bekijk S-Klasse Details",
-    en: "View S-Class Details",
-    de: "S-Klasse Details anzeigen",
+    nl: "Bekijk S-Klasse-details",
+    en: "View S-Class details",
+    de: "S-Klasse-Details anzeigen",
     fr: "Voir les détails de la Classe S",
     es: "Ver detalles de la Clase S",
   },
+
   bookSClass: {
     nl: "Boek S-Klasse",
     en: "Book S-Class",
@@ -905,8 +906,8 @@ export const translations = {
 
   // Business
   businessSolutions: {
-    nl: "Zakelijke Oplossingen",
-    en: "Business Solutions",
+    nl: "Zakelijke oplossingen",
+    en: "Business solutions",
     de: "Geschäftslösungen",
     fr: "Solutions d'affaires",
     es: "Soluciones empresariales",
@@ -919,8 +920,8 @@ export const translations = {
     es: "Servicios de chófer premium adaptados a las necesidades corporativas",
   },
   elevateTransportation: {
-    nl: "Verhoog Uw Zakelijk Vervoer",
-    en: "Elevate Your Corporate Transportation",
+    nl: "Verhoog uw zakelijk vervoer",
+    en: "Elevate your corporate transportation",
     de: "Verbessern Sie Ihren Unternehmenstransport",
     fr: "Élevez votre transport d'entreprise",
     es: "Eleve su transporte corporativo",
@@ -975,8 +976,8 @@ export const translations = {
     es: "Soluciones de transporte personalizadas",
   },
   benefitsForBusiness: {
-    nl: "Voordelen voor Zakelijke Klanten",
-    en: "Benefits for Business Clients",
+    nl: "Voordelen voor zakelijke klanten",
+    en: "Benefits for business clients",
     de: "Vorteile für Geschäftskunden",
     fr: "Avantages pour les clients d'affaires",
     es: "Beneficios para clientes empresariales",
@@ -1038,15 +1039,15 @@ export const translations = {
     es: "Todos los servicios de transporte empresarial son completamente deducibles de impuestos con la documentación adecuada proporcionada.",
   },
   trustedByCompanies: {
-    nl: "Vertrouwd Door Toonaangevende Bedrijven",
-    en: "Trusted By Leading Companies",
+    nl: "Vertrouwd door toonaangevende bedrijven",
+    en: "Trusted by leading companies",
     de: "Vertraut von führenden Unternehmen",
     fr: "Approuvé par les entreprises leaders",
     es: "Confiado por empresas líderes",
   },
   readyToElevate: {
-    nl: "Klaar om Uw Zakelijke Reizen te Verbeteren?",
-    en: "Ready to Elevate Your Corporate Travel?",
+    nl: "Klaar om uw zakelijke reizen te verbeteren?",
+    en: "Ready to elevate your corporate travel?",
     de: "Bereit, Ihre Geschäftsreisen zu verbessern?",
     fr: "Prêt à élever vos voyages d'affaires?",
     es: "¿Listo para elevar sus viajes corporativos?",
@@ -1316,6 +1317,13 @@ export const translations = {
     fr: "Une erreur s'est produite lors de l'envoi. Veuillez réessayer.",
     es: "Se produjo un error al enviar. Por favor, inténtelo de nuevo.",
   },
+  sending: {
+    nl: "Verzenden...",
+    en: "Sending...",
+    de: "Senden...",
+    fr: "Envoi...",
+    es: "Enviando...",
+  },
 
   // Thumbnail text
   thumbnail: {
@@ -1543,8 +1551,8 @@ export const translations = {
 
   // Contact Page
   contactUs: {
-    nl: "Neem Contact Op",
-    en: "Contact Us",
+    nl: "Neem contact op",
+    en: "Contact us",
     de: "Kontaktieren Sie uns",
     fr: "Contactez-nous",
     es: "Contáctenos",
@@ -1585,8 +1593,8 @@ export const translations = {
     es: "Llámanos",
   },
   sendMessage: {
-    nl: "Stuur Ons een Bericht",
-    en: "Send Us a Message",
+    nl: "Stuur ons een bericht",
+    en: "Send us a message",
     de: "Senden Sie uns eine Nachricht",
     fr: "Envoyez-nous un message",
     es: "Envíanos un mensaje",
@@ -1606,8 +1614,8 @@ export const translations = {
     es: "Su mensaje",
   },
   sendMessageBtn: {
-    nl: "Verstuur Bericht",
-    en: "Send Message",
+    nl: "Verstuur bericht",
+    en: "Send message",
     de: "Nachricht senden",
     fr: "Envoyer le message",
     es: "Enviar mensaje",
@@ -1629,9 +1637,9 @@ export const translations = {
   whatsappMessage: {
     nl: "Beste Luxury Class,\nIk had een vraag over je aangeboden diensten.",
     en: "Dear Luxury Class,\nI had a question about your offered services.",
-    de: "Liebe Luxury Class,\nIch hatte eine Frage zu Ihren angebotenen Dienstleistungen.",
-    fr: "Cher Luxury Class,\nJ'avais une question sur vos services proposés.",
-    es: "Estimado Luxury Class,\nTenía una pregunta sobre sus servicios ofrecidos.",
+    de: "Dear Luxury Class,\nI had a question about your offered services.",
+    fr: "Dear Luxury Class,\nI had a question about your offered services.",
+    es: "Dear Luxury Class,\nI had a question about your offered services.",
   },
   instagram: {
     nl: "Instagram",
@@ -1650,11 +1658,11 @@ export const translations = {
 
   // Booking form additional translations
   makeAnotherBooking: {
-    nl: "Maak Nog Een Boeking",
-    en: "Make Another Booking",
-    de: "Weitere Buchung Erstellen",
-    fr: "Faire Une Autre Réservation",
-    es: "Hacer Otra Reserva",
+    nl: "Maak nog een boeking",
+    en: "Make another booking",
+    de: "Weitere buchung erstellen",
+    fr: "Faire une autre réservation",
+    es: "Hacer otra reserva",
   },
   companyName: {
     nl: "Bedrijfsnaam",

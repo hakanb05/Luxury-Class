@@ -324,7 +324,7 @@ export default function ContactPage() {
                             d="M4 12a8 8 0 018-8V0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                           ></path>
                         </svg>
-                        Verzenden...
+                        {t("sending")}
                       </>
                     ) : (
                       t("sendMessageBtn")

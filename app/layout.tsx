@@ -13,7 +13,13 @@ export const metadata: Metadata = {
   title: "Luxury Class - Premium Chauffeur Service Amsterdam",
   description:
     "Experience luxury transportation with our premium Mercedes-Benz chauffeur service in Amsterdam. Professional CCV-D1 certified drivers, latest model vehicles.",
-    generator: 'v0.dev'
+  generator: "v0.dev",
+  icons: {
+    icon: "/images/logo.png",
+  },
+  alternates: {
+    canonical: "https://www.luxuryclassbenz.com/",
+  }
 }
 
 export default function RootLayout({
