@@ -58,6 +58,33 @@ const popularRoutes = [
     vClassPrice: 110,
     sClassPrice: 120,
   },
+  {
+    from: "Amsterdam",
+    to: "Brussels",
+    distance: "210 km",
+    time: "2h 30min",
+    price: 325,
+    vClassPrice: 630,
+    sClassPrice: 640,
+  },
+  {
+    from: "Amsterdam",
+    to: "Düsseldorf",
+    distance: "222 km",
+    time: "2h 15min",
+    price: 340,
+    vClassPrice: 666,
+    sClassPrice: 676,
+  },
+  {
+    from: "Amsterdam",
+    to: "Antwerp",
+    distance: "160 km",
+    time: "2h",
+    price: 275,
+    vClassPrice: 480,
+    sClassPrice: 490,
+  },
 ]
 
 const partners = [
