@@ -20,8 +20,6 @@ import {
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useLanguage } from "@/lib/contexts/language-context"
-import AnimatedText from "@/components/ui/animated-text"
-
 
 const vClassImages = [
   "/images/V-class/front.jpeg",
@@ -104,9 +102,13 @@ function VehiclesContent() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="py-16 bg-muted/30">
-        <div className="container text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 fade-in-section"><AnimatedText text={t("ourFleet")}/> </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto fade-in-section">{t("fleetDescription")}</p>
+        <div className="container text-center px-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 fade-in-section break-words hyphens-auto leading-tight">
+            {t("ourFleet")}
+          </h1>
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto fade-in-section px-4">
+            {t("fleetDescription")}
+          </p>
         </div>
       </section>
 
@@ -114,13 +116,23 @@ function VehiclesContent() {
       <section className="py-8">
         <div className="container">
           <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value)} className="w-full">
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12 fade-in-section">
-              <TabsTrigger value="s-class">{t("sClass")}</TabsTrigger>
-              <TabsTrigger value="v-class">{t("vClass")}</TabsTrigger>
+            <TabsList className="grid w-full max-w-sm sm:max-w-md mx-auto grid-cols-2 mb-8 sm:mb-12 bg-muted">
+              <TabsTrigger
+                value="s-class"
+                className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500 data-[state=active]:via-red-500 data-[state=active]:to-orange-500 data-[state=active]:text-white data-[state=active]:border-0 transition-all duration-200"
+              >
+                {t("sClass")}
+              </TabsTrigger>
+              <TabsTrigger
+                value="v-class"
+                className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500 data-[state=active]:via-red-500 data-[state=active]:to-orange-500 data-[state=active]:text-white data-[state=active]:border-0 transition-all duration-200"
+              >
+                {t("vClass")}
+              </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="v-class" className="fade-in-section">
-              <div className="grid lg:grid-cols-2 gap-8 items-start">
+            <TabsContent value="v-class">
+              <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-start px-4 sm:px-0">
                 <div className="space-y-6">
                   <h2 className="text-3xl font-bold">Mercedes-Benz V-Class</h2>
                   <p className="text-lg text-muted-foreground">{t("vClassDescription")}</p>
@@ -185,7 +197,7 @@ function VehiclesContent() {
                       alt="Mercedes V-Class"
                       width={600}
                       height={620}
-                      className="rounded-lg shadow-lg w-full h-[300px] md:h-[400px]"
+                      className="rounded-lg shadow-lg w-full h-[250px] sm:h-[300px] md:h-[400px] object-cover"
                     />
                     <Button
                       variant="ghost"
@@ -242,7 +254,7 @@ function VehiclesContent() {
               </div>
             </TabsContent>
 
-            <TabsContent value="s-class" className="fade-in-section">
+            <TabsContent value="s-class">
               <div className="grid lg:grid-cols-2 gap-8 items-start">
                 <div className="space-y-6">
                   <h2 className="text-3xl font-bold">{t("sClass")}</h2>
@@ -360,7 +372,7 @@ function VehiclesContent() {
                   size="lg"
                   className="bg-orange-500 hover:bg-orange-600 dark:bg-red-600 dark:hover:bg-red-700 dark:border dark:border-white"
                 >
-                  <Link href="/book?vehicle=s-class">{t("bookSClass")}</Link>
+                  <Link href="/book?vehicle=s-class">Book S-Class</Link>
                 </Button>
               </div>
             </TabsContent>
@@ -376,7 +388,7 @@ function VehiclesContent() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-white dark:bg-card rounded-lg shadow-lg p-6 border h-full fade-in-section">
+            <div className="bg-white dark:bg-card rounded-lg shadow-lg p-6 border h-full">
               <div className="mb-4">
                 <h3 className="text-xl font-bold flex items-center">
                   <Car className="h-5 w-5 text-orange-500 mr-2" />
@@ -462,7 +474,7 @@ function VehiclesContent() {
               </div>
             </div>
 
-            <div className="bg-white dark:bg-card rounded-lg shadow-lg p-6 border h-full fade-in-section">
+            <div className="bg-white dark:bg-card rounded-lg shadow-lg p-6 border h-full">
               <div className="mb-4">
                 <h3 className="text-xl font-bold flex items-center">
                   <Car className="h-5 w-5 text-orange-500 mr-2" />
@@ -543,7 +555,7 @@ function VehiclesContent() {
                   className="w-full text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600"
                   asChild
                 >
-                  <Link href="/vehicles?tab=s-class">{t("viewSClassDetails")}</Link>
+                  <Link href="/vehicles?tab=s-class">View S-Class Details</Link>
                 </Button>
               </div>
             </div>
@@ -559,7 +571,7 @@ function VehiclesContent() {
   )
 }
 
-export default function VehiclesPageContent() {
+export default function VehiclesPage() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <VehiclesContent />

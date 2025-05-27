@@ -19,12 +19,21 @@ const popularRoutes = [
     distance: "18 km",
     time: "25 min",
     price: 95,
-    vClassPrice: 95,
+    vClassPrice: 130,
     sClassPrice: 105,
   },
   {
-    from: "Amsterdam",
-    to: "Den Haag",
+    from: "Schiphol Airport",
+    to: "Amsterdam",
+    distance: "18 km",
+    time: "25 min",
+    price: 95,
+    vClassPrice: 130,
+    sClassPrice: 115,
+  },
+  {
+    from: "Den Haag",
+    to: "Amsterdam",
     distance: "60 km",
     time: "50 min",
     price: 156.25,
@@ -32,8 +41,8 @@ const popularRoutes = [
     sClassPrice: 173.75,
   },
   {
-    from: "Amsterdam",
-    to: "Rotterdam Airport",
+    from: "Rotterdam Airport",
+    to: "Amsterdam",
     distance: "75 km",
     time: "65 min",
     price: 173.75,
@@ -41,8 +50,8 @@ const popularRoutes = [
     sClassPrice: 191.25,
   },
   {
-    from: "Amsterdam",
-    to: "Haarlem",
+    from: "Haarlem",
+    to: "Amsterdam",
     distance: "20 km",
     time: "30 min",
     price: 110,
@@ -198,6 +207,7 @@ export default function HomePage() {
                           <span>{route.distance}</span>
                           <span>{route.time}</span>
                         </div>
+                        <div className="text-sm text-muted-foreground">{t("otherway")}</div>
                       </div>
                       <div className="flex-shrink-0">
                         {language === "nl" ? (

@@ -9,10 +9,11 @@ import AnimatedText from "@/components/ui/animated-text"
 import BookingForm from "@/components/ui/booking-form"
 
 const popularRoutes = [
-  { from: "Amsterdam", to: "Schiphol Airport", vClass: 95, sClass: 105 },
-  { from: "Amsterdam", to: "Den Haag", vClass: 156.25, sClass: 173.75 },
-  { from: "Amsterdam", to: "Rotterdam Airport", vClass: 173.75, sClass: 191.25 },
-  { from: "Amsterdam", to: "Haarlem", vClass: 110, sClass: 120 },
+    { from: "Schiphol Airport", to: "Amsterdam", vClass: 130, sClass: 140 },
+    { from: "Amsterdam", to: "Schiphol Airport", vClass: 105, sClass: 115 },
+    { from: "Rotterdam Airport", to: "Amsterdam", vClass: 173.75, sClass: 191.25 },
+    { from: "Eindhoven", to: "Amsterdam", vClass: 273.50, sClass: 283.50 },
+    { from: "Den Haag", to: "Amsterdam", vClass: 156.25, sClass: 173.75 },
 ]
 
 const internationalRoutes = [
@@ -102,6 +103,9 @@ function BookingContent() {
                           V-Class: {formatPrice(route.vClass)} • S-Class: {formatPrice(route.sClass)}
                         </>
                       )}
+                    <div className="text-xs text-muted-foreground mt-1 opacity-75">
+                        {t("otherway")}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -135,6 +139,9 @@ function BookingContent() {
                           V-Class: {formatPrice(route.vClass)} • S-Class: {formatPrice(route.sClass)}
                         </>
                       )}
+                    <div className="text-xs text-muted-foreground mt-1 opacity-75">
+                        {t("otherway")}
+                      </div>
                     </div>
                   </div>
                 ))}

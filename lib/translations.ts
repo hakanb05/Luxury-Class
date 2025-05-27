@@ -1562,6 +1562,20 @@ export const translations = {
     fr: "Oui, il y a de la place pour les bagages. Nous nous assurons que vos valises et effets personnels sont transportés en toute sécurité et confortablement. N'hésitez pas à nous faire savoir à l'avance combien de pièces vous souhaitez apporter afin que nous puissions nous organiser en conséquence.",
     es: "Sí, hay espacio para equipaje. Nos aseguramos de que sus maletas y pertenencias personales sean transportadas de manera segura y cómoda. No dude en informarnos con anticipación cuántas piezas desea traer para que podamos acomodarlas en consecuencia.",
   },
+  internationalRoutes: {
+    nl: "Internationale routes",
+    en: "International routes",
+    de: "Internationale routen",
+    fr: "Itinéraires internationaux",
+    es: "Rutas internacionales",
+  },
+  otherway: {
+    nl: "Ook andersom mogelijk",
+    en: "Also possible the other way",
+    de: "Auch andersherum möglich",
+    fr: "Aussi possible dans l'autre sens",
+    es: "También posible al revés",
+  },
 
   // Contact Page
   contactUs: {
