@@ -207,7 +207,7 @@ export default function HomePage() {
                           <span>{route.distance}</span>
                           <span>{route.time}</span>
                         </div>
-                        <div className="text-sm text-muted-foreground">{t("otherway")}</div>
+                        {/* <div className="text-sm text-muted-foreground">{t("otherway")}</div> */}
                       </div>
                       <div className="flex-shrink-0">
                         {language === "nl" ? (
@@ -232,7 +232,7 @@ export default function HomePage() {
                 asChild
                 className=" text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600"
               >
-                <Link href="/services">{t("viewAllRoutes")}</Link>
+                <Link href="/book">{t("viewAllRoutes")}</Link>
               </Button>
             </div>
           </div>

@@ -7,8 +7,8 @@ export function Footer() {
   const { t } = useLanguage()
 
   return (
-  <footer className="bg-black text-white border-t border-t-gray-700">
-    <div className="container py-8 md:py-12">
+    <footer className="bg-black text-white border-t border-t-gray-700">
+      <div className="container py-8 md:py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="space-y-3">
             <h3 className="text-lg font-semibold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent dark:text-red-500">
@@ -16,13 +16,19 @@ export function Footer() {
             </h3>
             <p className="text-sm">{t("premiumService")}</p>
             <div className="space-y-1 text-sm text-foreground text-white">
-              <a href="tel:+31629421860" className="hover:underline block">+31 6 29421860</a>
-              <a href="mailto:luxuryclassbenz@gmail.com" className="hover:underline block">luxuryclassbenz@gmail.com</a>
+              <a href="tel:+31629421860" className="hover:underline block">
+                +31 6 29421860
+              </a>
+              <a href="mailto:luxuryclassbenz@gmail.com" className="hover:underline block">
+                luxuryclassbenz@gmail.com
+              </a>
             </div>
           </div>
 
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent dark:text-red-500">{t("services")}</h4>
+            <h4 className="text-sm font-semibold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent dark:text-red-500">
+              {t("services")}
+            </h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <Link href="/services" className="text-white">
@@ -43,7 +49,9 @@ export function Footer() {
           </div>
 
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent dark:text-red-500">{t("quickLinks")}</h4>
+            <h4 className="text-sm font-semibold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent dark:text-red-500">
+              {t("quickLinks")}
+            </h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <Link href="/about" className="text-white">
@@ -80,9 +88,19 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
+        <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground space-y-2">
           <p>
             &copy; {new Date().getFullYear()} Luxury Class Chauffeur Service. {t("allRightsReserved")}
+          </p>
+          <p>
+            <a
+              href="https://www.devkan.nl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-muted-foreground"
+            >
+              {t("createdByDevkan")}
+            </a>
           </p>
         </div>
       </div>

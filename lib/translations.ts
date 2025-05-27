@@ -541,6 +541,14 @@ export const translations = {
     fr: "Réserver Classe V",
     es: "Reservar Clase V",
   },
+  createdByDevkan: {
+    nl: "Gemaakt door DevKan",
+    en: "Created by DevKan",
+    de: "Erstellt von DevKan",
+    fr: "Créé par DevKan",
+    es: "Creado por DevKan",
+  },
+
   // S-Class features
   upTo3Passengers: {
     nl: "Tot 3 passagiers",
