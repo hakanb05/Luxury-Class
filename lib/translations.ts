@@ -1578,11 +1578,11 @@ export const translations = {
     es: "Rutas internacionales",
   },
   otherway: {
-    nl: "Ook andersom mogelijk",
-    en: "Also possible the other way",
-    de: "Auch andersherum möglich",
-    fr: "Aussi possible dans l'autre sens",
-    es: "También posible al revés",
+    nl: "Zelfde tarief geldt voor beide richtingen",
+    en: "Same rate applies both ways",
+    de: "Der gleiche Tarif gilt für beide Richtungen",
+    fr: "Le même tarif s'applique dans les deux sens",
+    es: "La misma tarifa se aplica en ambas direcciones",
   },
 
   // Contact Page
