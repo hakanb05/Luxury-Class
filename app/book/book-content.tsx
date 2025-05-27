@@ -103,8 +103,8 @@ function BookingContent() {
                           V-Class: {formatPrice(route.vClass)} • S-Class: {formatPrice(route.sClass)}
                         </>
                       )}
-                    <div className="text-xs text-muted-foreground mt-1 opacity-75">
-                        {t("otherway")}
+                      <div className="text-xs text-muted-foreground mt-1 opacity-75">
+                        {route.from !== "Schiphol Airport" && route.to !== "Schiphol Airport" && t("otherway")}
                       </div>
                     </div>
                   </div>
