@@ -69,7 +69,7 @@ export const translations = {
     nl: "Boek je rit",
     en: "Book your ride",
     de: "Buchen Sie Ihre Fahrt",
-    fr: "Réservez votre trajet",
+    fr: "Réservez votre trajet",  
     es: "Reserve su viaje",
   },
   viewServices: {
@@ -372,18 +372,18 @@ export const translations = {
   },
 
   vClass: {
-    nl: "Mercedes-Benz V-Klasse",
-    en: "Mercedes-Benz V-Class",
-    de: "Mercedes-Benz V-Klasse",
-    fr: "Mercedes-Benz Classe V",
-    es: "Mercedes-Benz Clase V",
+    nl: "Mercedes V-Klasse",
+    en: "Mercedes V-Class",
+    de: "Mercedes V-Klasse",
+    fr: "Mercedes Classe V",
+    es: "Mercedes Clase V",
   },
   sClass: {
-    nl: "Mercedes-Benz S-Klasse",
-    en: "Mercedes-Benz S-Class",
-    de: "Mercedes-Benz S-Klasse",
-    fr: "Mercedes-Benz Classe S",
-    es: "Mercedes-Benz Clase S",
+    nl: "Mercedes S-Klasse",
+    en: "Mercedes S-Class",
+    de: "Mercedes S-Klasse",
+    fr: "Mercedes Classe S",
+    es: "Mercedes Clase S",
   },
 
   VclassAmount: {
