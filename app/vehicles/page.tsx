@@ -30,17 +30,17 @@ const vClassImages = [
 ]
 
 const sClassImages = [
-  "/images/s-class.png",
+  "/images/S-class/front.webp",
+  "/images/S-class/cover.avif",
   "/images/cover.jpg",
-  "/placeholder.svg?height=400&width=600&text=S-Class+Interior",
-  "/placeholder.svg?height=400&width=600&text=S-Class+Luxury",
-  "/placeholder.svg?height=400&width=600&text=S-Class+Executive",
+  "images/S-class/back.jpg",
+  "/images/S-class/side.jpg",
 ]
 
 function VehiclesContent() {
   const { t, formatPrice, language } = useLanguage()
   const searchParams = useSearchParams()
-  const [activeTab, setActiveTab] = useState("v-class")
+  const [activeTab, setActiveTab] = useState("s-class")
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   useEffect(() => {
@@ -113,8 +113,8 @@ function VehiclesContent() {
         <div className="container">
           <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value)} className="w-full">
             <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12">
-              <TabsTrigger value="v-class">{t("vClass")}</TabsTrigger>
               <TabsTrigger value="s-class">{t("sClass")}</TabsTrigger>
+              <TabsTrigger value="v-class">{t("vClass")}</TabsTrigger>
             </TabsList>
 
             <TabsContent value="v-class">
@@ -179,7 +179,7 @@ function VehiclesContent() {
                 <div className="space-y-4">
                   <div className="relative w-full max-w-full overflow-hidden">
                     <Image
-                      src={currentImages[currentImageIndex]}
+                      src={currentImages[currentImageIndex] || "/placeholder.svg"}
                       alt="Mercedes V-Class"
                       width={600}
                       height={620}
@@ -216,7 +216,7 @@ function VehiclesContent() {
                       >
                         <div className="w-full h-full relative">
                           <Image
-                            src={image}
+                            src={image || "/placeholder.svg"}
                             alt={`Thumbnail ${index + 1}`}
                             width={64}
                             height={64}
@@ -233,7 +233,8 @@ function VehiclesContent() {
                 <Button
                   asChild
                   size="lg"
-                  className=" text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600">
+                  className=" text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600"
+                >
                   <Link href="/book?vehicle=v-class">{t("bookVClass")}</Link>
                 </Button>
               </div>
@@ -256,7 +257,7 @@ function VehiclesContent() {
                   </div>
 
                   <div>
-                  <h3 className="text-xl font-semibold mb-4">{t("keyFeatures")}</h3>
+                    <h3 className="text-xl font-semibold mb-4">{t("keyFeatures")}</h3>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="flex items-center space-x-3">
                         <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900/20 rounded-full flex items-center justify-center">
@@ -548,9 +549,7 @@ function VehiclesContent() {
 
           <div className="text-center mt-8 text-sm text-muted-foreground fade-in-section">
             <p>{t("hourlyRateExplanation")}</p>
-            <p className="mt-2">
-              {t("regionExplanation")}
-            </p>
+            <p className="mt-2">{t("regionExplanation")}</p>
           </div>
         </div>
       </section>

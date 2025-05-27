@@ -1,7 +1,8 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -19,6 +20,7 @@ interface BookingFormProps {
 
 export default function BookingForm({ onClose }: BookingFormProps) {
   const { t } = useLanguage()
+  const searchParams = useSearchParams()
   const [isBusiness, setIsBusiness] = useState(false)
   const [formSubmitted, setFormSubmitted] = useState(false)
   const [selectedTime, setSelectedTime] = useState("")
@@ -27,11 +29,24 @@ export default function BookingForm({ onClose }: BookingFormProps) {
   const [selectedDateHourly, setSelectedDateHourly] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState("")
+  const [activeTab, setActiveTab] = useState("one-way")
 
   // Form state for addresses
   const [fromAddress, setFromAddress] = useState("")
   const [toAddress, setToAddress] = useState("")
   const [fromAddressHourly, setFromAddressHourly] = useState("")
+
+  // Check URL parameters on component mount
+  useEffect(() => {
+    const service = searchParams.get("service")
+    const vehicle = searchParams.get("vehicle")
+
+    if (service === "hourly") {
+      setActiveTab("hourly")
+    } else {
+      setActiveTab("one-way")
+    }
+  }, [searchParams])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -42,7 +57,7 @@ export default function BookingForm({ onClose }: BookingFormProps) {
       // Collect form data
       const formData = new FormData(e.target as HTMLFormElement)
       const bookingData = {
-        serviceType: formData.get("serviceType") || "one-way",
+        serviceType: activeTab,
         from: fromAddress || fromAddressHourly,
         to: toAddress,
         date: selectedDate || selectedDateHourly,
@@ -82,7 +97,7 @@ export default function BookingForm({ onClose }: BookingFormProps) {
         <h3 className="text-xl font-semibold mb-2 text-green-600 dark:text-green-400">{t("requestBooking")}</h3>
         <p className="text-muted-foreground mb-4">{t("ctaDescription")}</p>
         <Button variant="outline" className="dark:border-white dark:text-white" onClick={() => setFormSubmitted(false)}>
-          Make Another Booking
+          {t("makeAnotherBooking")}
         </Button>
       </div>
     )
@@ -106,7 +121,7 @@ export default function BookingForm({ onClose }: BookingFormProps) {
               <p className="text-red-600 dark:text-red-400">{submitError}</p>
             </div>
           )}
-          <Tabs defaultValue="one-way" className="w-full" name="serviceType">
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger
                 value="one-way"
@@ -193,7 +208,7 @@ export default function BookingForm({ onClose }: BookingFormProps) {
                     id="from-hourly"
                     value={fromAddressHourly}
                     onChange={setFromAddressHourly}
-                    placeholder="Address, airport, hotel, ..."
+                    placeholder={t("adressPlaceholder")}
                     required
                   />
                 </div>
@@ -219,15 +234,15 @@ export default function BookingForm({ onClose }: BookingFormProps) {
                   </div>
                 </div>
                 <div>
-                  <Label htmlFor="duration">Duration</Label>
+                  <Label htmlFor="duration">{t("duration")}</Label>
                   <Select>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select duration" />
+                      <SelectValue placeholder={t("selectDuration")} />
                     </SelectTrigger>
                     <SelectContent>
                       {Array.from({ length: 22 }, (_, i) => i + 3).map((hours) => (
                         <SelectItem key={hours} value={hours.toString()}>
-                          {hours} hours
+                          {hours} {t("hours")}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -245,8 +260,8 @@ export default function BookingForm({ onClose }: BookingFormProps) {
                   <SelectValue placeholder={t("selectVehicle")} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="v-class">Mercedes-Benz V-Class (up to 7 passengers)</SelectItem>
                   <SelectItem value="s-class">Mercedes-Benz S-Class (up to 3 passengers)</SelectItem>
+                  <SelectItem value="v-class">Mercedes-Benz V-Class (up to 7 passengers)</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -264,8 +279,8 @@ export default function BookingForm({ onClose }: BookingFormProps) {
 
             {isBusiness && (
               <div className="animate-fade-up">
-                <Label htmlFor="company">Company Name</Label>
-                <Input id="company" placeholder="Your company name" name="companyName" />
+                <Label htmlFor="company">{t("companyName")}</Label>
+                <Input id="company" placeholder={t("yourCompanyName")} name="companyName" />
               </div>
             )}
 

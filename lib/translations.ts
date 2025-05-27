@@ -114,11 +114,11 @@ export const translations = {
     es: "¿Por qué Luxury Class?",
   },
   ccvCertificate: {
-    nl: "Alle chauffeurs hebben CCV-D1 Certificaat",
-    en: "All chauffeurs have CCV-D1 Certificate",
-    de: "Alle Chauffeure haben CCV-D1 Zertifikat",
-    fr: "Tous les chauffeurs ont le certificat CCV-D1",
-    es: "Todos los chóferes tienen certificado CCV-D1",
+    nl: "Al onze chauffeurs zijn CCV-D1 gecertificeerd",
+    en: "All our chauffeurs are CCV-D1 certified",
+    de: "Alle unsere Chauffeure sind CCV-D1 zertifiziert",
+    fr: "Tous nos chauffeurs sont certifiés CCV-D1",
+    es: "Todos nuestros chóferes están certificados por CCV-D1",
   },
   ccvDescription: {
     nl: "Professioneel en veilig rijden gegarandeerd",
@@ -386,6 +386,21 @@ export const translations = {
     es: "Mercedes-Benz Clase S",
   },
 
+  VclassAmount: {
+    nl: "Mercedes-Benz V-Klasse (tot 7 passagiers)",
+    en: "Mercedes-Benz V-Class (up to 7 passengers)",
+    de: "Mercedes-Benz V-Klasse (bis zu 7 Passagiere)",
+    fr: "Mercedes-Benz Classe V (jusqu'à 7 passagers)",
+    es: "Mercedes-Benz Clase V (hasta 7 pasajeros)",
+  },
+  SclassAmount: {
+    nl: "Mercedes-Benz S-Klasse (tot 3 passagiers)",
+    en: "Mercedes-Benz S-Class (up to 3 passengers)",
+    de: "Mercedes-Benz S-Klasse (bis zu 3 Passagiere)",
+    fr: "Mercedes-Benz Classe S (jusqu'à 3 passagers)",
+    es: "Mercedes-Benz Clase S (hasta 3 pasajeros)",
+  },
+
   vClassDescriptionAbout: {
     nl: "De perfecte keuze voor groepsreizen, waarbij ruime luxe wordt gecombineerd met praktisch comfort. Onze V-Klasse voertuigen zijn ideaal voor zakelijke groepen, families, of iedereen die waarde hecht aan ruimte en comfort tijdens hun reis.",
     en: "The perfect choice for group travel, combining spacious luxury with practical comfort. Our V-Class vehicles are ideal for business groups, families, or anyone who values space and comfort during their journey.",
@@ -526,7 +541,6 @@ export const translations = {
     fr: "Réserver Classe V",
     es: "Reservar Clase V",
   },
-
   // S-Class features
   upTo3Passengers: {
     nl: "Tot 3 passagiers",
@@ -1288,14 +1302,19 @@ export const translations = {
     fr: "Adresse, aéroport, hôtel, ...",
     es: "Dirección, aeropuerto, hotel, ...",
   },
-
-  // Loading text
   loading: {
     nl: "Laden...",
     en: "Loading...",
     de: "Laden...",
     fr: "Chargement...",
     es: "Cargando...",
+  },
+  errorSending: {
+    nl: "Er is een fout opgetreden bij het verzenden. Probeer het opnieuw.",
+    en: "An error occurred while sending. Please try again.",
+    de: "Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+    fr: "Une erreur s'est produite lors de l'envoi. Veuillez réessayer.",
+    es: "Se produjo un error al enviar. Por favor, inténtelo de nuevo.",
   },
 
   // Thumbnail text
@@ -1614,6 +1633,81 @@ export const translations = {
     fr: "Cher Luxury Class,\nJ'avais une question sur vos services proposés.",
     es: "Estimado Luxury Class,\nTenía una pregunta sobre sus servicios ofrecidos.",
   },
+  instagram: {
+    nl: "Instagram",
+    en: "Instagram",
+    de: "Instagram",
+    fr: "Instagram",
+    es: "Instagram",
+  },
+  followUs: {
+    nl: "Volg Ons",
+    en: "Follow Us",
+    de: "Folgen Sie uns",
+    fr: "Suivez-nous",
+    es: "Síguenos",
+  },
+
+  // Booking form additional translations
+  makeAnotherBooking: {
+    nl: "Maak Nog Een Boeking",
+    en: "Make Another Booking",
+    de: "Weitere Buchung Erstellen",
+    fr: "Faire Une Autre Réservation",
+    es: "Hacer Otra Reserva",
+  },
+  companyName: {
+    nl: "Bedrijfsnaam",
+    en: "Company Name",
+    de: "Firmenname",
+    fr: "Nom de l'entreprise",
+    es: "Nombre de la empresa",
+  },
+  yourCompanyName: {
+    nl: "Uw bedrijfsnaam",
+    en: "Your company name",
+    de: "Ihr Firmenname",
+    fr: "Le nom de votre entreprise",
+    es: "El nombre de su empresa",
+  },
+  duration: {
+    nl: "Duur",
+    en: "Duration",
+    de: "Dauer",
+    fr: "Durée",
+    es: "Duración",
+  },
+  selectDuration: {
+    nl: "Selecteer duur",
+    en: "Select duration",
+    de: "Dauer auswählen",
+    fr: "Sélectionner la durée",
+    es: "Seleccionar duración",
+  },
+  hours: {
+    nl: "uren",
+    en: "hours",
+    de: "Stunden",
+    fr: "heures",
+    es: "horas",
+  },
+
+  // Services page translations
+  readyToExperience: {
+    nl: "Klaar om Luxe te Ervaren?",
+    en: "Ready to Experience Luxury?",
+    de: "Bereit für Luxus?",
+    fr: "Prêt à Vivre le Luxe?",
+    es: "¿Listo para Experimentar el Lujo?",
+  },
+  chooseVehicleDescription: {
+    nl: "Kies het voertuig dat het beste bij uw behoeften past en geniet van een premium chauffeurservaring",
+    en: "Choose the vehicle that best suits your needs and enjoy a premium chauffeur experience",
+    de: "Wählen Sie das Fahrzeug, das am besten zu Ihren Bedürfnissen passt und genießen Sie ein Premium-Chauffeur-Erlebnis",
+    fr: "Choisissez le véhicule qui convient le mieux à vos besoins et profitez d'une expérience de chauffeur premium",
+    es: "Elija el vehículo que mejor se adapte a sus necesidades y disfrute de una experiencia de chófer premium",
+  },
 }
+
 export type Language = "nl" | "en" | "de" | "fr" | "es"
 export type TranslationKey = keyof typeof translations

@@ -147,7 +147,7 @@ export default function BusinessPage() {
 
             <div className="fade-in-section">
               <Image
-                src="/placeholder.svg?height=400&width=600&text=Business+Transportation"
+                src="/images/zakelijk_transport.webp"
                 alt={t("businessSolutions")}
                 width={600}
                 height={400}

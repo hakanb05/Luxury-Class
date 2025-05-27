@@ -82,7 +82,7 @@ export default function ServicesPage() {
   if (!mounted) {
     return (
       <div className="flex justify-center items-center min-h-screen">
-        <div className="animate-pulse">Laden...</div>
+        <div className="animate-pulse">{t("loading")}</div>
       </div>
     )
   }
@@ -127,7 +127,8 @@ export default function ServicesPage() {
                 </ul>
                 <Button
                   asChild
-                  className=" text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600">
+                  className=" text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600"
+                >
                   <Link href={`/book?service=${service.serviceType}`}>
                     {t("bookThisService")} <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
@@ -135,7 +136,7 @@ export default function ServicesPage() {
               </div>
               <div className={index % 2 === 1 ? "lg:col-start-1" : ""}>
                 <Image
-                  src={service.image}
+                  src={service.image || "/placeholder.svg"}
                   alt={service.title}
                   width={500}
                   height={300}
@@ -148,152 +149,158 @@ export default function ServicesPage() {
       </section>
 
       <section className="py-16 bg-muted/30">
-  <div className="container">
-    <div className="text-center mb-12 fade-in-section">
-      <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("transparentPricing")}</h2>
-    </div>
-
-    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-      <Card className="relative overflow-hidden flex flex-col h-full fade-in-section">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full -mr-16 -mt-16" />
-        <CardHeader>
-          <div className="flex items-center gap-3 mb-2">
-            <Car className="h-6 w-6 text-orange-500" />
-            <CardTitle>Mercedes-Benz V-Klasse</CardTitle>
+        <div className="container">
+          <div className="text-center mb-12 fade-in-section">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("transparentPricing")}</h2>
           </div>
-          <CardDescription>Tot 7 passagiers</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6 flex-grow">
-          <div className="space-y-4">
-            <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
-              <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-orange-500" />
-                <span className="font-medium">{t("hourlyRate")}</span>
-              </div>
-              <span className="text-2xl font-bold text-foreground dark:text-white">€85{t("hour")}</span>
-            </div>
 
-            <div className="space-y-2">
-              <div className="flex items-center gap-2 mb-2">
-                <Plane className="h-4 w-4 text-orange-500" />
-                <span className="font-medium">{t("airportTransfers")}</span>
-              </div>
-              <div className="pl-6 space-y-1">
-                <div className="flex justify-between text-sm">
-                  <span>{t("arrivalAmsterdam")}</span>
-                  <span className="font-semibold dark:text-white">€130</span>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Card className="relative overflow-hidden flex flex-col h-full fade-in-section">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full -mr-16 -mt-16" />
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <Car className="h-6 w-6 text-orange-500" />
+                  <CardTitle>{t("sClass")}</CardTitle>
                 </div>
-                <div className="flex justify-between text-sm">
-                  <span>{t("departureAmsterdam")}</span>
-                  <span className="font-semibold dark:text-white">€105</span>
+                <CardDescription>{t("upTo3Passengers")}</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6 flex-grow">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4 text-orange-500" />
+                      <span className="font-medium">{t("hourlyRate")}</span>
+                    </div>
+                    <span className="text-2xl font-bold text-foreground dark:text-white">€95{t("hour")}</span>
+                  </div>
+
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Plane className="h-4 w-4 text-orange-500" />
+                      <span className="font-medium">{t("airportTransfers")}</span>
+                    </div>
+                    <div className="pl-6 space-y-1">
+                      <div className="flex justify-between text-sm">
+                        <span>{t("arrivalAmsterdam")}</span>
+                        <span className="font-semibold dark:text-white">€140</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span>{t("departureAmsterdam")}</span>
+                        <span className="font-semibold dark:text-white">€115</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
+                    <div className="flex items-center gap-2">
+                      <MapPin className="h-4 w-4 text-orange-500" />
+                      <span className="font-medium">{t("cityTransfer")}</span>
+                    </div>
+                    <span className="font-bold dark:text-white">€105</span>
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
-              <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-orange-500" />
-                <span className="font-medium">{t("cityTransfer")}</span>
-              </div>
-              <span className="font-bold dark:text-white">€95</span>
-            </div>
-          </div>
-
-          <div className="pt-4 border-t space-y-2">
-            <h4 className="font-semibold flex items-center gap-2">
-              <Shield className="h-4 w-4 text-orange-500" />
-              {t("includedAmenities")}
-            </h4>
-            <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>✓ {t("highSpeedWifi")}</li>
-              <li>✓ {t("complimentaryWater")}</li>
-              <li>✓ {t("usbChargers")}</li>
-              <li>✓ {t("kmIncluded")}</li>
-            </ul>
-          </div>
-        </CardContent>
-        <CardFooter className="mt-auto">
-          <Button className="w-full text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600">
-
-            <Link href="/vehicles?tab=v-class">{t("viewVclass")}</Link>
-          </Button>
-        </CardFooter>
-      </Card>
-
-      <Card className="relative overflow-hidden flex flex-col h-full fade-in-section">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full -mr-16 -mt-16" />
-        <CardHeader>
-          <div className="flex items-center gap-3 mb-2">
-            <Car className="h-6 w-6 text-orange-500" />
-            <CardTitle>Mercedes-Benz S-Klasse</CardTitle>
-          </div>
-          <CardDescription>Tot 3 passagiers</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6 flex-grow">
-          <div className="space-y-4">
-            <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
-              <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-orange-500" />
-                <span className="font-medium">{t("hourlyRate")}</span>
-              </div>
-              <span className="text-2xl font-bold text-foreground dark:text-white">€95{t("hour")}</span>
-            </div>
-
-            <div className="space-y-2">
-              <div className="flex items-center gap-2 mb-2">
-                <Plane className="h-4 w-4 text-orange-500" />
-                <span className="font-medium">{t("airportTransfers")}</span>
-              </div>
-              <div className="pl-6 space-y-1">
-                <div className="flex justify-between text-sm">
-                  <span>{t("arrivalAmsterdam")}</span>
-                  <span className="font-semibold dark:text-white">€140</span>
+                <div className="pt-4 border-t">
+                  <p className="text-sm text-muted-foreground flex items-start gap-2">
+                    <CreditCard className="h-4 w-4 text-orange-500 mt-0.5" />
+                    <span>{t("extraKilometers")}</span>
+                  </p>
                 </div>
-                <div className="flex justify-between text-sm">
-                  <span>{t("departureAmsterdam")}</span>
-                  <span className="font-semibold dark:text-white">€115</span>
+              </CardContent>
+              <CardFooter className="mt-auto">
+                <Button
+                  className="w-full text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600"
+                  asChild
+                >
+                  <Link href="/vehicles?tab=s-class">{t("viewSclass")}</Link>
+                </Button>
+              </CardFooter>
+            </Card>
+
+            <Card className="relative overflow-hidden flex flex-col h-full fade-in-section">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full -mr-16 -mt-16" />
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <Car className="h-6 w-6 text-orange-500" />
+                  <CardTitle>{t("vClass")}</CardTitle>
                 </div>
-              </div>
-            </div>
+                <CardDescription>{t("upTo7Passengers")}</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6 flex-grow">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4 text-orange-500" />
+                      <span className="font-medium">{t("hourlyRate")}</span>
+                    </div>
+                    <span className="text-2xl font-bold text-foreground dark:text-white">€85{t("hour")}</span>
+                  </div>
 
-            <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
-              <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-orange-500" />
-                <span className="font-medium">{t("cityTransfer")}</span>
-              </div>
-              <span className="font-bold dark:text-white">€105</span>
-            </div>
-          </div>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Plane className="h-4 w-4 text-orange-500" />
+                      <span className="font-medium">{t("airportTransfers")}</span>
+                    </div>
+                    <div className="pl-6 space-y-1">
+                      <div className="flex justify-between text-sm">
+                        <span>{t("arrivalAmsterdam")}</span>
+                        <span className="font-semibold dark:text-white">€130</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span>{t("departureAmsterdam")}</span>
+                        <span className="font-semibold dark:text-white">€105</span>
+                      </div>
+                    </div>
+                  </div>
 
-          <div className="pt-4 border-t">
-            <p className="text-sm text-muted-foreground flex items-start gap-2">
-              <CreditCard className="h-4 w-4 text-orange-500 mt-0.5" />
-              <span>{t("extraKilometers")}</span>
-            </p>
+                  <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
+                    <div className="flex items-center gap-2">
+                      <MapPin className="h-4 w-4 text-orange-500" />
+                      <span className="font-medium">{t("cityTransfer")}</span>
+                    </div>
+                    <span className="font-bold dark:text-white">€95</span>
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t space-y-2">
+                  <h4 className="font-semibold flex items-center gap-2">
+                    <Shield className="h-4 w-4 text-orange-500" />
+                    {t("includedAmenities")}
+                  </h4>
+                  <ul className="space-y-1 text-sm text-muted-foreground">
+                    <li>✓ {t("highSpeedWifi")}</li>
+                    <li>✓ {t("complimentaryWater")}</li>
+                    <li>✓ {t("usbChargers")}</li>
+                    <li>✓ {t("kmIncluded")}</li>
+                  </ul>
+                </div>
+              </CardContent>
+              <CardFooter className="mt-auto">
+                <Button
+                  className="w-full text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600"
+                  asChild
+                >
+                  <Link href="/vehicles?tab=v-class">{t("viewVclass")}</Link>
+                </Button>
+              </CardFooter>
+            </Card>
           </div>
-        </CardContent>
-        <CardFooter className="mt-auto">
-          <Button className="w-full text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600">
-            <Link href="/vehicles?tab=s-class">{t("viewSclass")}</Link>
-          </Button>
-        </CardFooter>
-      </Card>
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* CTA Section - Simplified without background image */}
       <section className="py-16 border-t">
         <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 fade-in-section">Klaar om Luxe te Ervaren?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 fade-in-section">{t("readyToExperience")}</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto fade-in-section">
-            Kies het voertuig dat het beste bij uw behoeften past en geniet van een premium chauffeurservaring
+            {t("chooseVehicleDescription")}
           </p>
           <div className="fade-in-section">
             <Button
               asChild
               size="lg"
-              className="text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600">
+              className="text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 hover:from-pink-600 hover:via-red-600 hover:to-orange-600"
+            >
               <Link href="/book">{t("bookNow")}</Link>
             </Button>
           </div>

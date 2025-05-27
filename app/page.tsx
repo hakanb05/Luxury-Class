@@ -119,7 +119,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/images/cover.jpg" alt="Luxury Mercedes S-Class" fill className="object-cover" priority />
+          <Image src="/images/S-class/cover.avif" alt="Luxury Mercedes S-Class" fill className="object-cover" priority />
           <div className="absolute inset-0 bg-black/40" />
         </div>
 
@@ -283,7 +283,7 @@ export default function HomePage() {
             {partners.map((partner, index) => (
               <div key={index} className="flex items-center justify-center fade-in-section">
                 <Image
-                  src={partner.logo || "/placeholder.svg"}
+                  src={partner.logo}
                   alt={partner.name}
                   width={120}
                   height={60}

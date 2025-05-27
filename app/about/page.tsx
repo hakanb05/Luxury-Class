@@ -121,7 +121,7 @@ export default function AboutPage() {
             </div>
             <div className="fade-in-section">
               <Image
-                src="/placeholder.svg?height=400&width=600&text=About+Us"
+                src="/images/chaffeur.jpeg"
                 alt={t("aboutLuxuryClass")}
                 width={600}
                 height={400}
@@ -176,19 +176,14 @@ export default function AboutPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="rounded-lg overflow-hidden border fade-in-section">
+            <div className="rounded-lg overflow-hidden border fade-in-section flex flex-col h-full">
               <div className="relative w-full h-72">
-                <Image
-                  src="/images/V-class/side2.jpeg"
-                  alt={t("vClass")}
-                  fill
-                  className="object-cover"
-                />
+                <Image src="/images/V-class/side2.jpeg" alt={t("vClass")} fill className="object-cover" />
               </div>
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold mb-2">{t("vClass")}</h3>
                 <p className="text-muted-foreground mb-4">{t("vClassDescriptionAbout")}</p>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2 mb-6 flex-grow">
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="h-4 w-4 text-orange-500" />
                     <span>{t("premiumAirConditioning")}</span>
@@ -223,19 +218,14 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="rounded-lg overflow-hidden border fade-in-section">
+            <div className="rounded-lg overflow-hidden border fade-in-section flex flex-col h-full">
               <div className="relative w-full h-72">
-                <Image
-                  src="/placeholder.svg?height=400&width=600&text=Mercedes+S-Class"
-                  alt={t("sClass")}
-                  fill
-                  className="object-cover"
-                />
+                <Image src="/images/S-class/cover.avif" alt={t("sClass")} fill className="object-cover" />
               </div>
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold mb-2">{t("sClass")}</h3>
                 <p className="text-muted-foreground mb-4">{t("sClassDescriptionAbout")}</p>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2 mb-6 flex-grow">
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="h-4 w-4 text-orange-500" />
                     <span>{t("ultimateComfortSeats")}</span>
@@ -284,12 +274,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
             {partners.map((partner, index) => (
               <div key={index} className="flex items-center justify-center fade-in-section">
-                <Image
-                  src={partner.logo}
-                  alt={partner.name}
-                  width={120}
-                  height={60}
-                />
+                <Image src={partner.logo || "/placeholder.svg"} alt={partner.name} width={120} height={60} />
               </div>
             ))}
           </div>
