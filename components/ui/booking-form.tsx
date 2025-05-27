@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
@@ -18,7 +18,7 @@ interface BookingFormProps {
   onClose?: () => void
 }
 
-export default function BookingForm({ onClose }: BookingFormProps) {
+function BookingFormContent({ onClose }: BookingFormProps) {
   const { t } = useLanguage()
   const searchParams = useSearchParams()
   const [isBusiness, setIsBusiness] = useState(false)
@@ -337,5 +337,13 @@ export default function BookingForm({ onClose }: BookingFormProps) {
         </form>
       </div>
     </div>
+  )
+}
+
+export default function BookingForm({ onClose }: BookingFormProps) {
+  return (
+    <Suspense fallback={<div className="p-6">Loading...</div>}>
+      <BookingFormContent onClose={onClose} />
+    </Suspense>
   )
 }

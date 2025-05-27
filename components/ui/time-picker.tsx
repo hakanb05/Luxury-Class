@@ -29,7 +29,18 @@ export default function TimePicker({ value, onChange, selectedDate }: TimePicker
 
     // Als het vandaag is, check of het uur al voorbij is
     const currentHour = today.getHours()
-    return hour <= currentHour
+    const currentMinutes = today.getMinutes()
+
+    // Als het huidige uur is en we zijn al voorbij het hele uur, dan is het in het verleden
+    // Anders alleen als het uur volledig voorbij is
+    if (hour < currentHour) {
+      return true
+    } else if (hour === currentHour && currentMinutes > 30) {
+      // Als we meer dan 30 minuten in het huidige uur zijn, beschouw het als voorbij
+      return true
+    }
+
+    return false
   }
 
   return (
@@ -50,7 +61,9 @@ export default function TimePicker({ value, onChange, selectedDate }: TimePicker
               key={hour}
               onClick={() => !isPastTime && onChange(timeString)}
               className={`cursor-pointer ${
-                isPastTime ? "opacity-50 cursor-not-allowed text-muted-foreground" : "hover:bg-accent"
+                isPastTime
+                  ? "opacity-50 cursor-not-allowed text-muted-foreground bg-gray-100 dark:bg-gray-800"
+                  : "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
               }`}
               disabled={isPastTime}
             >
