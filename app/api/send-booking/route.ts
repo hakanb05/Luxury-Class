@@ -136,7 +136,7 @@ export async function POST(request: NextRequest) {
     const { data, error } = await resend.emails.send({
     //   from: "Luxury Class <noreply@luxuryclass.nl>",
       from: "onboarding@resend.dev",
-      to: ["hakanbektas934@gmail.com"],
+      to: ["luxuryclassbenz@gmail.com"],
       subject: `🚗 Nieuwe Boekingsaanvraag - ${name} (${serviceType === "one-way" ? "Enkele Reis" : "Per Uur"})`,
       html: emailHtml,
       replyTo: email,
