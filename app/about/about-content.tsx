@@ -34,10 +34,10 @@ const skills = [
 
 const partners = [
   { name: "ING", logo: "/images/logos/ing.png" },
-  { name: "KNVB", logo: "/images/logos/knvb.png" },
+  { name: "ABN Amro", logo: "/images/logos/abn.png" },
   { name: "Audemars Piguet", logo: "images/logos/ap_audemars.png" },
   { name: "Heineken", logo: "images/logos/heineken.png" },
-  { name: "Feadship", logo: "/images/logos/feadship.png" },
+  { name: "KLM", logo: "/images/logos/klm.jpg" },
 ]
 
 export default function AboutPageContent() {
